@@ -1,0 +1,42 @@
+#navb {
+    display: flex;
+    background-color: aquamarine;
+
+
+}
+
+body {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Dubai_Marina_Skyline.jpg/1200px-Dubai_Marina_Skyline.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: aquamarine;
+    background-blend-mode: multiply;
+
+}
+
+#box {
+    opacity: 0.4;
+
+
+}
+
+#box:hover {
+    opacity: 1;
+}
+
+#b1 {
+    margin-right: 20px;
+}
+
+#b2 {
+    margin-right: 20px;
+}
+
+#b3 {
+    margin-right: 20px;
+}
+
+#b4 {
+    margin-right: 20px;
+    background-color: transparent;
+}

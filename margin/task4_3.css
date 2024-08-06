@@ -1,0 +1,71 @@
+.but {
+    margin-left: 20px;
+    margin-top: 16px;
+}
+
+.navb {
+    height: 49px;
+    width: 500px;
+    margin-left: 5px;
+    border: solid 5px black;
+}
+
+.body1 {
+    background-color: pink;
+    height: 298px;
+    width: 500px;
+}
+
+.mainb {
+
+    height: 256px;
+    width: 509px;
+    ;
+    border-left: solid 5px white;
+    border-right: solid 5px white;
+
+
+}
+
+.box1 {
+    height: 500px;
+    width: 450px;
+    border-right: solid 5px white;
+    border-left: solid 5px white;
+}
+
+.box2 {
+    background-color: blue;
+    height: 200px;
+    width: 400px;
+    border: solid 5px black;
+}
+
+.box3 {
+    background-color: white;
+    height: 150px;
+    width: 365px;
+    border: solid 5px black;
+    margin-top: 14px;
+}
+
+.box4 {
+    background-color: yellow;
+    height: 108px;
+    width: 326px;
+    border: solid 5px black;
+    margin-top: 14px;
+}
+
+.box5 {
+    background-color: yellow;
+    height: 17px;
+    width: 50px;
+    border: solid 5px black;
+    margin-bottom: 14px;
+    margin-right: 269px;
+}
+
+p{
+    margin-bottom: 6px;
+}

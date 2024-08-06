@@ -1,0 +1,1376 @@
+* {
+    margin: 0px;
+    border: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+
+}
+
+a:hover{
+
+    color: orange;
+}
+
+
+body{
+
+    overflow-x: hidden;
+}
+
+
+.main1 {
+
+    width: 100%;
+    height: 800px;
+
+
+}
+
+.navbar {
+
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7%;
+    position: fixed;
+    z-index: 2;
+    box-shadow: 0px 0px 15px rgb(14, 14, 14);
+
+}
+
+
+
+.socials {
+
+    width: auto;
+    height: fit-content;
+    background-color: white;
+    border-bottom: 2px solid grey;
+    display: flex;
+
+
+}
+
+.s1 {
+    box-sizing: border-box;
+    width: 50%;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    justify-content: left;
+    padding-left: 10%;
+    gap: 15%;
+
+
+}
+
+.s2 {
+    box-sizing: border-box;
+    width: 50%;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    justify-content: right;
+    padding-right: 10%;
+
+
+
+}
+
+
+
+.email {
+
+    width: fit-content;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.map {
+
+    width: fit-content;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fb {
+
+    width: fit-content;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.insta {
+
+    width: fit-content;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img {
+    width: 10px;
+    height: 10px;
+    border: solid 2ps white;
+    background-color: black;
+
+}
+
+.Li {
+
+    width: fit-content;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.X {
+
+    width: fit-content;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.heading {
+
+    height: fit-content;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    padding-bottom: 1%;
+
+}
+
+.mainhead {
+
+    height: 44px;
+    width: 30%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.details {
+    width: 70%;
+    height: 44px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 2%;
+    gap: 2%;
+
+
+
+}
+
+.con1 {
+    width: 100%;
+    height: 88%;
+    background-repeat: no-repeat;
+    background-image: url(https://images.squarespace-cdn.com/content/v1/614b8a3ca23b0a1609d011b0/1633600657482-RD46JYBH5UB94DFT8GFI/lofthouseresidences_hero_innovation2.jpg);
+    background-color: rgb(109, 107, 107);
+    background-blend-mode: multiply;
+    background-size: cover;
+
+
+}
+
+.maincon {
+
+    height: 80%;
+    width: 50%;
+    position: relative;
+
+}
+
+.data1 {
+    height: 34%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: end;
+
+}
+
+.canada {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    background-color: white;
+    position: absolute;
+    left: 28%;
+    font: bolder;
+    font-weight: bolder;
+    color: black;
+    white-space: normal;
+
+}
+
+.data2 {
+    height: 66%;
+    width: 100%;
+    display: flex;
+    padding-top: 5%;
+
+}
+
+.mess {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 319%;
+    text-align: left;
+    position: relative;
+    left: 10%;
+    font: bolder;
+    font-weight: bolder;
+    color: white;
+
+
+}
+
+.main2 {
+
+    width: auto;
+    height: 712px;
+    position: relative;
+    padding-top: 2%;
+
+
+}
+
+.main2_1 {
+
+    height: 66%;
+    width: 25%;
+    background-image: url(https://decormatters-blog-uploads.s3.amazonaws.com/Snapinsta_app_276315090_165540042475821_2989573417430569203_n_1080_9ca5fc08ee.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 10%;
+
+}
+
+.but2_1 {
+
+    height: 15%;
+    width: 10%;
+    position: absolute;
+    bottom: 21%;
+    left: 4%;
+    border-radius: 63%;
+}
+
+.img2_1 {
+
+    width: 100%;
+    height: 100%;
+    background-image: url(https://thumbs.dreamstime.com/b/vector-pencil-notepad-icon-26361310.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 63%;
+}
+
+.main2_2 {
+
+    height: 66%;
+    width: 25%;
+    position: absolute;
+    left: 39%;
+    display: flex;
+    flex-direction: column;
+    gap: 16%;
+}
+
+.head2_2 {
+
+    width: 98%;
+    height: fit-content;
+    font-size: larger;
+    font-weight: bold;
+    padding-left: 2%;
+    border-left: solid 2px orange;
+}
+
+.head2_3 {
+
+    width: 100%;
+    height: fit-content;
+    font-weight: bolder;
+    font-size: 215%;
+}
+
+.con2_2 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 0%;
+    background-color: rgb(243, 243, 240);
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 5%;
+    border-radius: 2%;
+
+}
+
+.link2_1 {
+
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+    border-bottom: solid 2px gray;
+}
+
+.a2 {
+    color: black;
+}
+
+.con2_3 {
+
+    width: 100%;
+    height: 41%;
+    padding-top: 2%;
+    padding-left: 2%;
+
+}
+
+.main2_3 {
+    box-sizing: border-box;
+    height: 66%;
+    width: 25%;
+    background-color: rgb(252, 252, 252);
+    border-radius: 0%;
+    position: absolute;
+    left: 70%;
+    padding: 0% 2%;
+    box-shadow: 5px 5px 5px 5px rgb(123, 121, 121);
+
+
+}
+
+.con2_31 {
+    width: 100%;
+    height: 25%;
+    border-bottom: solid 2px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+}
+
+.text2_31 {
+    width: 18%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.img2_31 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.text2_32 {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 17%;
+
+}
+
+.t1 {
+    width: fit-content;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 175%;
+}
+
+.t2 {
+
+    color: gray;
+}
+
+.con2_32 {
+    width: 100%;
+    height: 25%;
+    border-bottom: solid 2px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.text2_3a {
+    width: 18%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.img2_3a {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.text2_3b {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 17%;
+
+}
+
+.ta {
+    width: fit-content;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 175%;
+}
+
+.tb {
+
+    color: gray;
+}
+
+.con2_33 {
+    width: 100%;
+    height: 25%;
+    border-bottom: solid 2px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+
+}
+
+.text2_3c {
+    width: 18%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.img2_3c {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.text2_3d {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 17%;
+
+}
+
+.tc {
+    width: fit-content;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 175%;
+}
+
+.td {
+
+    color: gray;
+}
+
+.con2_34 {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding-left: 3%;
+}
+
+.text2_34 {
+    width: 18%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.img2_34 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.text2_35 {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 17%;
+
+}
+
+.t4 {
+    width: fit-content;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 175%;
+}
+
+.t5 {
+
+    color: gray;
+}
+
+.main3 {
+    width: 100%;
+    height: 967px;
+    background-color: white;
+}
+
+.bg3 {
+    width: 100%;
+    height: 50%;
+    background-image: url(https://amazingarchitecture.com/storage/3451/luxury_interior.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(196, 192, 192);
+    background-blend-mode: multiply;
+    filter: blur(5px);
+
+
+}
+
+.main3t {
+
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    top: 238%;
+    left: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+
+}
+
+.main3v {
+
+    width: 80%;
+    height: 48%;
+    position: absolute;
+    top: 283%;
+    left: 9%;
+
+}
+
+.v1 {
+
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+
+}
+
+.vv {
+    box-sizing: border-box;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.vv1 {
+    box-sizing: border-box;
+    padding-left: 2%;
+    width: fit-content;
+    height: fit-content;
+    border-left: solid 2px rgb(199, 199, 199);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%;
+    color: orange;
+}
+
+.mv1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 240%;
+    color: white;
+}
+
+.g3 {
+
+    width: 100%;
+    height: 25%;
+    display: flex;
+    position: relative;
+    top: 22%;
+    justify-content: space-around;
+    align-items: center;
+
+
+
+}
+
+.c3 {
+
+    height: 50%;
+    width: 26.1%;
+    position: relative;
+    display: flex;
+    background-color: rgb(244, 240, 240);
+    box-shadow: 5px 5px 5px 5px rgb(123, 121, 121);
+}
+
+.c3_1 {
+    height: 60%;
+    width: 22%;
+    border-radius: 65%;
+    position: absolute;
+    left: 92%;
+    bottom: 85%;
+    background-color: orange;
+
+}
+
+.cg1 {
+
+    width: 50%;
+    height: 100%;
+    font-weight: bold;
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 465%;
+}
+
+.cg2 {
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: left;
+}
+
+.main4 {
+    width: 100%;
+    height: 800px;
+
+}
+
+.top4 {
+
+    width: 100%;
+    height: 20%;
+    display: flex;
+
+}
+
+.top41 {
+    width: 50%;
+    height: 100%;
+    padding-left: 1%;
+}
+
+.topn {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 123%;
+    border-left: solid 2px black;
+
+
+}
+
+.topc {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 255%;
+
+
+}
+
+.top42 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    align-items: center;
+    gap: 5%;
+    padding-right: 4%;
+
+}
+
+.tc42 {
+
+    width: 20%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(7, 7, 7);
+    background-color: rgb(240 240 240);
+}
+
+.cont4 {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+}
+
+.con4a {
+    box-sizing: border-box;
+    height: 50%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2%;
+    box-shadow: 10px 10px 10px 10px rgb(191, 191, 191);
+    background-color: rgb(243, 243, 240);
+}
+
+.con4b {
+
+    height: 60%;
+    width: 30%;
+    background-image: url(https://i.pinimg.com/736x/4c/e6/ec/4ce6ec8ebc1706f67a5e71d1c6c0493b.jpg);
+    background-size: cover;
+}
+
+.con4at {
+
+    height: 20%;
+    width: 100%;
+    display: flex;
+    border-bottom: solid 2px grey;
+
+
+
+
+
+}
+
+.con4atc1 {
+
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+
+
+
+}
+
+.con4atc2 {
+
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 200%;
+
+
+}
+
+.con4c {
+    box-sizing: border-box;
+    height: 50%;
+    width: 30%;
+    box-shadow: 10px 10px 10px 10px rgb(191, 191, 191);
+    background-color: rgb(243, 243, 240);
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.con4c1 {
+
+    width: 100%;
+    height: 13%;
+    font-weight: bolder;
+}
+
+.con4c2 {
+
+    width: 100%;
+    height: 63%;
+
+}
+
+.conbut {
+
+    width: 40%;
+    height: 19%;
+}
+
+.conbuti {
+
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.sv {
+
+    position: relative;
+    bottom: 70%;
+}
+
+.lin {
+    color: white;
+    padding-left: 3%;
+}
+
+.main5 {
+
+    height: 800px;
+    width: 100%;
+
+
+}
+
+.main5h {
+
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.m5h1 {
+
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+}
+
+.c5h1 {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.c5ht {
+
+    height: fit-content;
+    width: fit-content;
+    border-left: solid 2px orange;
+    color: orange;
+}
+
+.c5h2 {
+    height: 75%;
+    width: 89%;
+    text-align: center;
+    font-size: 200%;
+}
+
+/* .g5{
+
+    height: 75%;
+    width: 100%;
+    border: solid 2px black;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+.g5c{
+
+    height: 100%;
+    width: 30%;
+    border: solid 2px black;
+
+}
+
+.gcm1{
+
+    width: 100%;
+    height: 50%;
+    display: flex;
+    border: solid 2px black;
+    justify-content: center;
+    gap: 3%;
+}
+.g5ci{
+
+    height: 70%;
+    width: 100%;
+    border: solid 2px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.g5im{
+
+    height:100%;
+    width: 50%;
+    border: solid black 2px;
+    background-image: url(https://weadesign.com/wp-content/uploads/2024/03/luxury-design.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.g5ic{
+
+    height:55%;
+    width: 100%;
+    border: solid black 2px;
+} */
+
+.listings {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.listing1 {
+
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+}
+
+.lcon {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+.limg {
+    height: 100%;
+    width: 100%;
+    background-image: url(https://weadesign.com/wp-content/uploads/2024/03/luxury-design.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+
+.lcon2 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    /* gap: 30%; */
+    /* padding: 0 1%; */
+    justify-content: space-around;
+
+}
+
+.cona {
+    box-sizing: border-box;
+    height: 80%;
+    width: 30%;
+    padding-top: 1%;
+    text-align: center;
+
+}
+
+.conb {
+
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    padding-bottom: 2%;
+
+}
+
+.lcon3 {
+    box-sizing: border-box;
+    padding-top: 1%;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.lcon4 {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    height: 10%;
+    justify-content: space-around;
+
+
+}
+
+.detailsc {
+
+    height: 100%;
+    width: 25%;
+    text-align: center;
+
+}
+
+.lcon5 {
+    box-sizing: border-box;
+    height: 20%;
+    width: 100%;
+    padding-left: 33%;
+    padding-top: 5%;
+
+}
+
+.lconlink {
+    box-sizing: border-box;
+    height: 60%;
+    width: 60%;
+    padding-top: 2%;
+    text-align: center;
+    box-shadow: 5px 5px 5px 5px gray;
+
+
+}
+
+.mainc3_3 {
+
+    height: 20%;
+    width: 20%;
+}
+
+.main6 {
+
+
+    height: 900px;
+    width: 100%;
+
+    position: absolute;
+    top: 656%;
+}
+
+.main6t {
+
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    top: 8%;
+    left: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    text-align: center;
+
+}
+
+.bg6 {
+    width: 100%;
+    height: 50%;
+    background-image: url(https://b8architecture.com/dev/wp-content/uploads/2022/11/b8-architecture-modern-luxury-villa-morgan-id-dubai-01.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(164, 162, 162);
+    background-blend-mode: multiply;
+    filter: blur(5px);
+
+
+}
+
+.con6last {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 11%;
+    justify-content: center;
+    gap: 7%;
+}
+
+.co6m {
+
+    width: 40%;
+    height: 100%;
+    border-radius: 2%;
+}
+
+.co6md {
+
+    width: 35%;
+    height: 100%;
+    border-radius: 2%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    background-color: rgb(235, 234, 234);
+}
+
+.co6m1 {
+
+    width: 100%;
+    height: 70%;
+
+    background-image: url(https://media.gettyimages.com/id/172055637/photo/satellite-image-of-katsura-imperial-villa-near-kyoto-japan-collected-on-january-17-2011.jpg?s=1024x1024&w=gi&k=20&c=TrO_gsbdR0Z3aa29WBYUs9h36drZmNomXU_x6zIr-ZM=);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.co6m2 {
+
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+}
+
+.co6m2a {
+
+    height: 44%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.co6m2ap {
+
+    height: 80%;
+    width: 30%;
+    border-radius: 29%;
+    background-image: url(https://i.pinimg.com/474x/88/a9/d0/88a9d0c252977e827f7f3862e8de6714.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.co6m2apd {
+
+    height: 40%;
+    width: 50%;
+
+}
+
+.co6m2ae {
+
+    height: 80%;
+    width: 30%;
+    border-radius: 29%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/205/854/non_2x/email-icon-free-vector.jpg);
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+.co6mdetails {
+
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 9%;
+    padding-left: 2%;
+    padding-top: 2%;
+    box-sizing: border-box;
+}
+
+.name {
+
+    width: 100%;
+    height: 26%;
+    font-size: 143%;
+    padding-left: 2%;
+}
+
+.texta {
+    height: 34%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+
+}
+
+.textai{
+
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(195, 193, 193);
+    border-radius: 20px;
+
+}
+
+.textb {
+    height: 65%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+
+}
+
+.textbi {
+    height: 85%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(199, 198, 198);
+    border-radius: 20px;
+
+
+}
+
+
+.co6mdetailsb {
+
+    width: 43%;
+    height: 14%;
+    display: flex;
+    gap: 9%;
+    align-items: center;
+    padding-left: 2%;
+}
+
+.co6but {
+
+    width: 43%;
+    height: 75%;
+
+}
+
+.buts {
+    font-size: 20px;
+    color: orange;
+    background-color: white;
+    border-radius: 20px;
+}
+
+button:hover {
+
+    background-color: rgb(223, 223, 223);
+}
+
+div.footer {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+
+}
+
+.footer1 {
+    box-sizing: border-box;
+    height: 20%;
+    width: 100%;
+    border: solid 2px black;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 2%;
+}
+
+@media only screen and (max-width: 600px) {
+    .details {
+
+        display: none;
+
+    }
+
+    .navbar{
+
+        width: 320px;
+    }
+
+    .mess{
+
+        width: 300px;
+    }
+
+
+  }

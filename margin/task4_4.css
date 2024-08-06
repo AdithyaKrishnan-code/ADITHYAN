@@ -1,0 +1,44 @@
+.mainb{
+    height: 200px;
+    width: 500px;
+    background-color: white;
+    border: solid 3px black;
+}
+.box1{
+    height: 150px;
+    width: 450px;
+    background-color: violet;
+    border: solid 3px white;
+    margin-left: 18px;
+    margin-top: 17px;
+
+}
+
+.box2{
+    height: 107px;
+    width: 107px;
+    background-color: lightgreen;
+    margin-left: 44px;
+    margin-top: 17px;
+
+}
+
+.box3{
+    height: 107px;
+    width: 107px;
+    background-color: yellow;
+    margin-left: 52px;
+    margin-top: -127px;
+}
+.b1{
+    margin-left: 20px;
+}
+.box4{
+    height: 107px;
+    width: 107px;
+    background-color: red;
+    margin-left: 253px;
+    margin-top: -107px;
+
+}
+

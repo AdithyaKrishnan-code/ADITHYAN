@@ -1,0 +1,15 @@
+                </div>
+                <div class="n5">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwC_cun5Vg3Emnod_kt0DFW40AksdT8CV2tw&s"
+                        alt="">
+                    <div class="news5"> SOME IMPORTANT NEWS!!</div>
+                </div>
+                <div class="n6">
+                    <img src="https://cdn.pixabay.com/photo/2022/04/09/15/10/basketball-7121617_640.jpg" alt="">
+                    <div class="news6"> SOME IMPORTANT NEWS!!</div>
+                </div>
+                <div class="n7">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTix_7MyUGehu7-IgXxCpCz5TttdCoZnshCEQ&s"
+                        alt="">
+                    <div class="news7"> SOME IMPORTANT NEWS!!</div>
+                </div>

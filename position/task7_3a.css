@@ -1,0 +1,131 @@
+* {
+    margin: 0px;
+    border: 0px;
+}
+
+.main {
+
+    height: 100vh;
+    width: auto;
+    background-color: black;
+    border: 2px solid white;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+
+.navb {
+
+    width: auto;
+    height: 69px;
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.heading {
+    height: 30px;
+    width: auto;
+    position: absolute;
+    top: 10px;
+    left: 45px;
+}
+
+h1 {
+    color: white;
+}
+
+.links {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    top: 20px;
+    right: 45px;
+}
+
+.wa{
+    height: 100px;
+    width: 100px;
+    border: solid 2px white;
+    position: fixed;
+    top: 80%;
+    right: 3%;
+    background-image: url(https://i.pinimg.com/564x/14/57/7d/14577debdd065507a9324ed29ec69389.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius:58%;
+}
+.content {
+
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    top: 20%;
+    right: 60%;
+}
+
+.maincon {
+    height: 70%;
+    width: 100%;
+
+}
+
+.secon{
+    height:15% ;
+    width: 100%;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    height:15% ;
+    width: 100%;
+
+}
+
+.text2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 20%;
+
+}
+
+.button{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 572%;
+
+}
+
+.pic{
+
+    height: 500px;
+    width: 500px;
+    border-radius: 20px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7C_YJE47UD_B8rlRMf77bKnkz4i0yf7x5Lg&s);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+
+}
