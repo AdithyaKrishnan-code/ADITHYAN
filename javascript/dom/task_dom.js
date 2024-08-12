@@ -1,7 +1,15 @@
 let bd = document.body
 let div = document.createElement("div")
-let div2 = document.createElement("div2")
-div.append(div2)
+let div2 = document.createElement("div")
+
+div2.className = "div2"
+
+let div2_1 = document.getElementsByClassName("div2")
+
+let list = div2.classList
+list.add("divstyle")
+
+let div3 = document.getElementsByClassName("div2")
 
 
 
@@ -19,9 +27,9 @@ div.style.backgroundColor = "black"
 div.style.width="100px"
 div.style.height = "100px"
 
-div2.innerText = "good morning"
-div2.style.color = "white"
 
+
+div.append(div2)
 bd.append(div)
 
 
