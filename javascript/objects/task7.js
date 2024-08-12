@@ -77,7 +77,7 @@ function remove_sub(item_to_be_deleted) {
 
         if (student.subject[i].sub == item_to_be_deleted) {
 
-            student.subject.splice(student.subject[i], 1)
+            student.subject.splice(i, 1)
 
 
         }
@@ -169,53 +169,51 @@ while (z) {
                 break;
             }
 
-        case 4:{
+        case 4: {
 
             let x = true
-            while(x){
-
-                let sub_choice = prompt("enter your sub choice 1.add new subject and marks 2.to remove a subject 3.edit mark 4.display subjects 6. exit")
+            let sub_choice = prompt("enter your sub choice 1.add new subject and marks 2.to remove a subject 3.edit mark 4.display subjects 6. exit")
 
 
 
 
 
-                if (sub_choice == 1) {
-                    console.log("add new subject and mark: ");
-                    new_sub = prompt("enter the new subject: ")
-                    new_mark = prompt("enter new subject s mark: ")
+            if (sub_choice == 1) {
+                console.log("add new subject and mark: ");
+                new_sub = prompt("enter the new subject: ")
+                new_mark = prompt("enter new subject s mark: ")
 
-                    add_newsub(new_sub, new_mark)
-
-
-                }
-                else if (sub_choice == 2) {
-
-                    sub_to_remove = prompt("enter the name of the subject to be removed ")
-                    remove_sub(sub_to_remove)
+                add_newsub(new_sub, new_mark)
 
 
-
-
-                }
-
-                else if (sub_choice == 3) {
-
-                    sel_sub = prompt("enter the name of the subject whose mark has to be change")
-                    new_mark = prompt("enter the new mark ")
-
-                    change_mark(sel_sub, new_mark)
-
-                }
-                else if (sub_choice == 4) {
-
-                    console.log(student.subject);
-                }
-                else { x = false }
-
-                console.log(student.subject)
-                break;
             }
+            else if (sub_choice == 2) {
+
+                sub_to_remove = prompt("enter the name of the subject to be removed ")
+                remove_sub(sub_to_remove)
+
+
+
+
+            }
+
+            else if (sub_choice == 3) {
+
+                sel_sub = prompt("enter the name of the subject whose mark has to be change")
+                new_mark = prompt("enter the new mark ")
+
+                change_mark(sel_sub, new_mark)
+
+            }
+            else if (sub_choice == 4) {
+
+                console.log(student.subject);
+            }
+            else { x = false }
+
+            console.log(student.subject)
+            break;
+
         }
 
 
@@ -266,10 +264,10 @@ while (z) {
 
         }
 
-        
+
         case 8: {
 
-            z=false
+            z = false
 
             break;
         }
