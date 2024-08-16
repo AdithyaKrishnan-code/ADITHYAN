@@ -2,6 +2,8 @@ let task = document.getElementById("search")
 let add_button = document.getElementById("addbutton")
 let task_list = document.getElementById("tasks")
 let delete_button = document.getElementById("deletebutton")
+let darkm = document.getElementById("darkmode")
+let darkmode_settings = localStorage.getItem("dark_mode")
 
 // array of tasks
 
@@ -60,7 +62,7 @@ function add_tasks() {
         })
 
         edit_button.addEventListener("click", () => {
-            edit(i)
+            edit(i, things_to_do)
         })
 
     }
@@ -81,49 +83,23 @@ function sample(count) {
 // function to edit using edit button on the side
 
 
-function edit(count) {
+function edit(count, array) {
 
     // console.log("object"+count);
 
     let edits = document.getElementById("box" + count)
 
-    let a = prompt("enter the new task ")
+    let a = prompt("enter your new task", array[count])
 
     edits.innerHTML = a
 
     things_to_do[count] = a
 
-
-
 }
 
 
 
-function delete_tasks() {
 
-    for (let j = 0; j < things_to_do.length; j++) {
-
-
-
-        if (task.value == things_to_do[j]) {
-            let list = document.createElement("li")
-            list.innerHTML = things_to_do.splice(j, 1)
-            task_list.appendChild(list)
-        }
-
-        task_list.innerHTML = ""
-
-
-
-    }
-
-    for (let i = 0; i < things_to_do.length; i++) {
-        let list = document.createElement("li")
-        list.innerHTML = things_to_do[i]
-        task_list.appendChild(list)
-
-    }
-}
 
 
 
@@ -150,7 +126,7 @@ task.addEventListener("keydown", (e) => {
 })
 
 
-
+// -----------------------------------------------------
 
 // function for space bar edits
 
@@ -170,8 +146,47 @@ document.body.addEventListener("keydown", (e) => {
 
 })
 
+// ------------------------------------------------------------------------------------------------------------------------------
 
 
 
+// darkmode
+
+const enable_dmode = () => {
+
+    document.body.classList.add("dark")
+
+    localStorage.setItem("dark_mode", "enabled")
 
 
+}
+const disable_dmode = () => {
+
+
+    document.body.classList.remove("dark")
+
+    localStorage.setItem("dark_mode" , null )
+
+
+}
+
+
+if(darkmode_settings === "enabled"){
+
+    enable_dmode()
+}
+
+
+
+darkm.addEventListener("click", () => {
+
+    darkmode_settings = localStorage.getItem("dark_mode")
+    
+    if ( darkmode_settings !== "enabled") {
+
+        enable_dmode()
+    }else{
+
+        disable_dmode()
+    }
+})

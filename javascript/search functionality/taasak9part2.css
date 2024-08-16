@@ -2,8 +2,28 @@
 
     display: flex;
     gap: 20px;
+    width: 100%;
 }
 
+.back_box{
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.sanda{
+
+    width: 50%;
+}
+
+.darkm{
+
+    width: 50%;
+    display: flex;
+    justify-content: right;
+}
 #tasks{
 
     display: flex;
@@ -12,6 +32,8 @@
     box-sizing: border-box;
     width: 600px;
 }
+
+
 
 div{
 
@@ -25,9 +47,10 @@ div{
     
 }
 
-.back_box{
+.dark{
 
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    color:rgb(123, 234, 195);
+    background-color: rgb(48, 48, 48);
 }
+
+
