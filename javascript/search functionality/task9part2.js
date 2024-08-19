@@ -13,7 +13,7 @@ let things_to_do = []
 
 // function to add  aalong with buttons tasks to the array
 
-let d_b
+
 
 function add_tasks() {
 
@@ -152,6 +152,8 @@ document.body.addEventListener("keydown", (e) => {
 
 // darkmode
 
+
+
 const enable_dmode = () => {
 
     document.body.classList.add("dark")
@@ -165,13 +167,14 @@ const disable_dmode = () => {
 
     document.body.classList.remove("dark")
 
-    localStorage.setItem("dark_mode" , null )
+
+    localStorage.setItem("dark_mode", null)
 
 
 }
 
 
-if(darkmode_settings === "enabled"){
+if (darkmode_settings === "enabled") {
 
     enable_dmode()
 }
@@ -181,11 +184,11 @@ if(darkmode_settings === "enabled"){
 darkm.addEventListener("click", () => {
 
     darkmode_settings = localStorage.getItem("dark_mode")
-    
-    if ( darkmode_settings !== "enabled") {
+
+    if (darkmode_settings !== "enabled") {
 
         enable_dmode()
-    }else{
+    } else {
 
         disable_dmode()
     }

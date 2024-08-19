@@ -5,6 +5,10 @@
     width: 100%;
 }
 
+
+
+
+
 .back_box{
 
     display: flex;
@@ -54,3 +58,9 @@ div{
 }
 
 
+.button_dark{
+
+    color: rgb(123, 234, 195);;
+    background-color: rgb(48, 48, 48);
+
+}

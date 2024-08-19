@@ -1,0 +1,143 @@
+body{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.mainpage{
+
+    width: 500px;
+    height: 500px;
+    border: solid 2px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.loginbox{
+
+    width: 360px;
+    height: 300px;
+    border:  solid 2px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    box-sizing: border-box;
+
+}
+
+.loginspace1{
+
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ 
+}
+
+.user_name{
+
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message{
+
+    width: 70%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inputfield{
+
+    height: 209%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+.loginspace2{
+
+    width: 90%;
+    height: 50%;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.button{
+
+    width: 135px;
+    height: 46px;
+    border-radius: 30px;
+}
+
+
+.loginmessagebox{
+
+    width: 360px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginmess{
+
+    width: 70%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 69%;
+}
+
+.loginmess2{
+
+    width: 70%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 106%;
+}
+
+.loginspace3{
+
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:  14px;
+ 
+}
+
+.inputfield2{
+
+    height: 30%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+
+
+
+
