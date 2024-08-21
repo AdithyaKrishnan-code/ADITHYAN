@@ -14,7 +14,13 @@ let mainpg = document.getElementById("mainpg")
 
 let userget = JSON.parse(localStorage.getItem("user_details"))
 
+
+
 let loginspace = document.getElementById("loginspace")
+
+let back_button = document.getElementById("arrow")
+
+
 
 
 
@@ -25,7 +31,7 @@ email.style.display = "none"
 
 
 
-// for signup function------------------------------------------------------------------------------------------
+// for signup button in the sign up page ----------------------------------------------------------------------------------------
 
 function adddata() {
 
@@ -35,14 +41,82 @@ function adddata() {
         p_word: password.value
     }
 
+    if (username.value == "" || email.value == "" || password.value == "") {
 
-    localStorage.setItem("user_details", JSON.stringify(user))
+        alert("kindly enter all the details !!!!!!");
+    }
 
-    
+    else {
+
+        if (userget == null) {
+
+            let details = []
+            details.push(user)
+            localStorage.setItem("user_details", JSON.stringify(details))
+        } else {
+
+            userget.push(user)
+
+            localStorage.setItem("user_details", JSON.stringify(userget))
+        }
+    }
+
+
+
+
+    if (username.value != "" && email.value != "" && password.value != "") {
+
+
+        let page3 = document.getElementById("page")
+
+        page3.style.display = "none"
+
+        console.log("hello");
+
+        let newpage = document.createElement("div")
+
+        let logmessage = document.createElement("div")
+
+        logmessage.innerHTML = "<h1>SIGN UP SUCCESSFUL !</h1>"
+
+        mainpg.appendChild(newpage)
+
+        newpage.appendChild(logmessage)
+
+        newpage.style.display = "flex"
+
+        newpage.classList.add("loginmessagebox")
+        logmessage.classList.add("loginmess")
+
+
+    } else {
+        let page3 = document.getElementById("page")
+        page3.style.display = "none"
+
+        console.log("hello");
+
+        let newpage = document.createElement("div")
+
+        let logmessage = document.createElement("div")
+
+        logmessage.innerHTML = "<h1>ENTER VALID VALUES!</h1>"
+
+        mainpg.appendChild(newpage)
+        newpage.appendChild(logmessage)
+
+        newpage.style.display = "flex"
+
+        newpage.classList.add("loginmessagebox")
+        logmessage.classList.add("loginmess")
+    }
+
+
+
+
 }
 // -------------new page function (signup)----------------------------------------------------------------------------------------------------------
 
-signup.addEventListener("click",newpage)
+signup.addEventListener("click", newpage)
 
 
 function newpage() {
@@ -50,9 +124,15 @@ function newpage() {
 
     // -----for creating a new page for sign up---------------------------------------------------------------------------
 
+    username.value = ""
+    password.value = ""
+    email.value = ""
+
     lbox.style.display = "none"
 
     let signup_page = document.createElement("div")
+
+    signup_page.id = "page"
 
     signup_page.classList.add("loginbox")
 
@@ -83,11 +163,11 @@ function newpage() {
 
 
     // -----signup details-----------------------------------------------------------------------------------------------------------------------
-    
+
     username.classList.add("inputfield2")
     email.classList.add("inputfield2")
     password.classList.add("inputfield2")
-    
+
     email.style.display = "flex"
 
     signup_details1.appendChild(username)
@@ -95,95 +175,83 @@ function newpage() {
     signup_details1.appendChild(password)
 
 
+    // ----event listener for the signup button in signup page--------------------------------------------
 
-    // ----event listener for the signup button---------------------------------------------
+    signup_button.addEventListener("click", adddata)
 
-    signup_button.addEventListener("click",adddata)
 
-   
 }
-
-
 
 // login function -----------------------------------------------------------------------------------------------------------------------
 
 login.addEventListener("click", () => {
 
-    userget = JSON.parse(localStorage.getItem("user_details"))
+    console.log("hello login");
+
+
+    let user_found = false
+    let i = 0
+
+    console.log("before loop");
 
     if (username.value != "" && password.value != "") {
 
+        for (; i < userget.length; i++) {
 
-        if (userget.u_name == username.value && userget.p_word == password.value) {
+            if (userget[i].u_name == username.value && userget[i].p_word == password.value) {
 
-            lbox.style.display = "none";
+                lbox.style.display = "none";
 
-            console.log("hello");
+                console.log("hello");
 
-            let newpage = document.createElement("div")
+                let newpage = document.createElement("div")
 
-            let logmessage = document.createElement("div")
+                let logmessage = document.createElement("div")
 
-            logmessage.innerHTML = "<h1>LOGIN SUCCESSFUL !</h1>"
+                logmessage.innerHTML = "<h1>LOGIN SUCCESSFUL !</h1>"
 
+                mainpg.appendChild(newpage)
+                newpage.appendChild(logmessage)
 
+                newpage.style.display = "flex"
 
+                newpage.classList.add("loginmessagebox")
+                logmessage.classList.add("loginmess")
 
-            mainpg.appendChild(newpage)
-            newpage.appendChild(logmessage)
+                user_found == true
+                break
 
-            newpage.style.display = "flex"
+            } else {
 
-            newpage.classList.add("loginmessagebox")
-            logmessage.classList.add("loginmess")
+                lbox.style.display = "none";
 
-        } else {
+                let newpage = document.createElement("div")
 
-            console.log("hello world");
+                let logmessage = document.createElement("div")
 
+                logmessage.innerHTML = "<h1>LOGIN NOT SUCCESSFUL !</h1>"
 
-            lbox.style.display = "none";
+                mainpg.appendChild(newpage)
+                newpage.appendChild(logmessage)
 
+                newpage.style.display = "flex"
 
-            let newpage = document.createElement("div")
-
-            let logmessage = document.createElement("div")
-
-            logmessage.innerHTML = "<h1>LOGIN NOT SUCCESSFUL !</h1>"
-
-
-
-
-            mainpg.appendChild(newpage)
-            newpage.appendChild(logmessage)
-
-            newpage.style.display = "flex"
-
-            newpage.classList.add("loginmessagebox")
-            logmessage.classList.add("loginmess2")
-
-
-
+                newpage.classList.add("loginmessagebox")
+                logmessage.classList.add("loginmess2")
+                break
+            }
         }
-
-
-
-    }
-    else {
-        console.log("hello world myr");
-
+    } else {
+        console.log("wrong");
+        console.log("hello world");
 
         lbox.style.display = "none";
-
 
         let newpage = document.createElement("div")
 
         let logmessage = document.createElement("div")
 
-        logmessage.innerHTML = "<h1>NO INPUT DETECTED !</h1>"
-
-
-
+        logmessage.innerHTML = "<h1>EMPTY VALUES NOT ALLOWED !</h1>"
 
         mainpg.appendChild(newpage)
         newpage.appendChild(logmessage)
@@ -193,15 +261,13 @@ login.addEventListener("click", () => {
         newpage.classList.add("loginmessagebox")
         logmessage.classList.add("loginmess2")
     }
-
-
-
-
-
-
 })
 
-// -----------------------------------------------------------------------------------------------------------------
 
+// -------------------------------------------------------------------------------------------------
 
+back_button.addEventListener("click", () => {
 
+    location.reload()
+
+})
