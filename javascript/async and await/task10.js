@@ -218,30 +218,15 @@ login.addEventListener("click", () => {
                 newpage.classList.add("loginmessagebox")
                 logmessage.classList.add("loginmess")
 
-                user_found == true
+                user_found = true
                 break
 
-            } else {
-
-                lbox.style.display = "none";
-
-                let newpage = document.createElement("div")
-
-                let logmessage = document.createElement("div")
-
-                logmessage.innerHTML = "<h1>LOGIN NOT SUCCESSFUL !</h1>"
-
-                mainpg.appendChild(newpage)
-                newpage.appendChild(logmessage)
-
-                newpage.style.display = "flex"
-
-                newpage.classList.add("loginmessagebox")
-                logmessage.classList.add("loginmess2")
-                break
             }
+
         }
-    } else {
+        console.log(user_found);
+    } else if (username.value == "" && password.value == "") {
+
         console.log("wrong");
         console.log("hello world");
 
@@ -260,6 +245,34 @@ login.addEventListener("click", () => {
 
         newpage.classList.add("loginmessagebox")
         logmessage.classList.add("loginmess2")
+
+        user_found = true
+
+
+
+    }
+    if (user_found == false) {
+
+
+
+        console.log("not succesfull");
+
+        lbox.style.display = "none";
+
+        let newpage = document.createElement("div")
+
+        let logmessage = document.createElement("div")
+
+        logmessage.innerHTML = "<h1>LOGIN NOT SUCCESSFUL !</h1>"
+
+        mainpg.appendChild(newpage)
+        newpage.appendChild(logmessage)
+
+        newpage.style.display = "flex"
+
+        newpage.classList.add("loginmessagebox")
+        logmessage.classList.add("loginmess2")
+
     }
 })
 
