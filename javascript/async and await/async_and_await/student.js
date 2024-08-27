@@ -25,16 +25,13 @@ data_fetch("student.json").then((data) => {
 
     search_bar.addEventListener("input", () => {
 
-        let value = search_bar.value
+        let value = search_bar.value.toLowerCase()
 
         console.log(value);
 
         suggestion_box.innerHTML = ""
 
         data.map((e) => {
-
-            // suggestion_box.innerHTML = ""
-
 
             if(!value){
 
@@ -43,16 +40,19 @@ data_fetch("student.json").then((data) => {
             }
             else{
 
-                if(e.Name.includes(value)){
+                if(e.Name.toLowerCase().includes(value)){
 
-                    let text_names = document.createElement("p")
+                    let text_names = document.createElement("div")
+                    text_names.id = "text_data"
                     text_names.innerText = e.Name
                     suggestion_box.appendChild(text_names)
 
+                    let button = document.createElement("button")
+                    button.innerHTML = "details"
+                    button.id = "butt"
+                    text_names.appendChild(button)
+
                     console.log(e.Name)
-                }
-                else {
-                    
                 }
             }
 
