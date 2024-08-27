@@ -29,7 +29,7 @@ data_fetch("student.json").then((data) => {
 
         console.log(value);
 
-        // suggestion_box.innerHTML = " "
+        suggestion_box.innerHTML = ""
 
         data.map((e) => {
 
@@ -51,9 +51,8 @@ data_fetch("student.json").then((data) => {
 
                     console.log(e.Name)
                 }
-                else{
-
-                    // suggestion_box.innerText=""
+                else {
+                    
                 }
             }
 
