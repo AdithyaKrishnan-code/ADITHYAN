@@ -14,7 +14,13 @@ let mainpg = document.getElementById("mainpg")
 
 let userget = JSON.parse(localStorage.getItem("user_details"))
 
+
+
 let loginspace = document.getElementById("loginspace")
+
+let back_button = document.getElementById("arrow")
+
+
 
 
 
@@ -25,7 +31,7 @@ email.style.display = "none"
 
 
 
-// for signup function------------------------------------------------------------------------------------------
+// for signup button in the sign up page ----------------------------------------------------------------------------------------
 
 function adddata() {
 
@@ -35,14 +41,73 @@ function adddata() {
         p_word: password.value
     }
 
+    if (userget == null) {
 
-    localStorage.setItem("user_details", JSON.stringify(user))
+        let details = []
+        details.push(user)
+        localStorage.setItem("user_details", JSON.stringify(details))
+    } else {
 
-    
+        userget.push(user)
+
+        localStorage.setItem("user_details", JSON.stringify(userget))
+    }
+
+
+
+    if (username.value != "" && email.value != "" && password.value != "") {
+
+
+        let page3 = document.getElementById("page")
+
+        page3.style.display = "none"
+
+        console.log("hello");
+
+        let newpage = document.createElement("div")
+
+        let logmessage = document.createElement("div")
+
+        logmessage.innerHTML = "<h1>SIGN UP SUCCESSFUL !</h1>"
+
+        mainpg.appendChild(newpage)
+
+        newpage.appendChild(logmessage)
+
+        newpage.style.display = "flex"
+
+        newpage.classList.add("loginmessagebox")
+        logmessage.classList.add("loginmess")
+
+
+    } else {
+        let page3 = document.getElementById("page")
+        page3.style.display = "none"
+
+        console.log("hello");
+
+        let newpage = document.createElement("div")
+
+        let logmessage = document.createElement("div")
+
+        logmessage.innerHTML = "<h1>ENTER VALID VALUES!</h1>"
+
+        mainpg.appendChild(newpage)
+        newpage.appendChild(logmessage)
+
+        newpage.style.display = "flex"
+
+        newpage.classList.add("loginmessagebox")
+        logmessage.classList.add("loginmess")
+    }
+
+
+
+
 }
 // -------------new page function (signup)----------------------------------------------------------------------------------------------------------
 
-signup.addEventListener("click",newpage)
+signup.addEventListener("click", newpage)
 
 
 function newpage() {
@@ -50,9 +115,15 @@ function newpage() {
 
     // -----for creating a new page for sign up---------------------------------------------------------------------------
 
+    username.value = ""
+    password.value = ""
+    email.value = ""
+
     lbox.style.display = "none"
 
     let signup_page = document.createElement("div")
+
+    signup_page.id = "page"
 
     signup_page.classList.add("loginbox")
 
@@ -83,11 +154,11 @@ function newpage() {
 
 
     // -----signup details-----------------------------------------------------------------------------------------------------------------------
-    
+
     username.classList.add("inputfield2")
     email.classList.add("inputfield2")
     password.classList.add("inputfield2")
-    
+
     email.style.display = "flex"
 
     signup_details1.appendChild(username)
@@ -95,21 +166,57 @@ function newpage() {
     signup_details1.appendChild(password)
 
 
+    // ----event listener for the signup button in signup page--------------------------------------------
 
-    // ----event listener for the signup button---------------------------------------------
+    signup_button.addEventListener("click", adddata)
 
-    signup_button.addEventListener("click",adddata)
 
-   
 }
-
-
 
 // login function -----------------------------------------------------------------------------------------------------------------------
 
 login.addEventListener("click", () => {
 
-    userget = JSON.parse(localStorage.getItem("user_details"))
+
+    // console.log(userget[0].u_name);
+
+    for(let i = 0 ; i< userget.length ; i++){
+
+
+        if (username.value != "" && password.value != ""){
+
+            if(userget[i].u_name == username.value && userget[i].p_word == password.value ){
+
+                lbox.style.display = "none";
+
+                console.log("hello");
+    
+                let newpage = document.createElement("div")
+    
+                let logmessage = document.createElement("div")
+    
+                logmessage.innerHTML = "<h1>LOGIN SUCCESSFUL !</h1>"
+    
+                mainpg.appendChild(newpage)
+                newpage.appendChild(logmessage)
+    
+                newpage.style.display = "flex"
+    
+                newpage.classList.add("loginmessagebox")
+                logmessage.classList.add("loginmess")
+
+                
+            }else{
+
+                
+
+            }
+        }
+
+
+    }
+
+// ---------------------------------------------------------------------------------------------------------------------------------
 
     if (username.value != "" && password.value != "") {
 
@@ -125,9 +232,6 @@ login.addEventListener("click", () => {
             let logmessage = document.createElement("div")
 
             logmessage.innerHTML = "<h1>LOGIN SUCCESSFUL !</h1>"
-
-
-
 
             mainpg.appendChild(newpage)
             newpage.appendChild(logmessage)
@@ -150,9 +254,6 @@ login.addEventListener("click", () => {
             let logmessage = document.createElement("div")
 
             logmessage.innerHTML = "<h1>LOGIN NOT SUCCESSFUL !</h1>"
-
-
-
 
             mainpg.appendChild(newpage)
             newpage.appendChild(logmessage)
@@ -182,9 +283,6 @@ login.addEventListener("click", () => {
 
         logmessage.innerHTML = "<h1>NO INPUT DETECTED !</h1>"
 
-
-
-
         mainpg.appendChild(newpage)
         newpage.appendChild(logmessage)
 
@@ -195,13 +293,12 @@ login.addEventListener("click", () => {
     }
 
 
-
-
-
-
 })
 
-// -----------------------------------------------------------------------------------------------------------------
+// ----------------back button-------------------------------------------------------------------------------------------------
 
+back_button.addEventListener("click", () => {
 
+    location.reload()
 
+})
