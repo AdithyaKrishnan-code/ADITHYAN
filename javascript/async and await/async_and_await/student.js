@@ -25,40 +25,40 @@ data_fetch("student.json").then((data) => {
 
     search_bar.addEventListener("input", () => {
 
-
-
         let value = search_bar.value
 
         console.log(value);
-        
-        suggestion_box.innerHTML = " "
+
+        // suggestion_box.innerHTML = " "
 
         data.map((e) => {
-            
+
+            // suggestion_box.innerHTML = ""
+
+
             if(!value){
 
                 suggestion_box.innerHTML = ""
-                
+
             }
-            
-            if ( e.Name.includes(value)) {
-                
-                let box = document.createElement("p")
-                
-                console.log(e.Name);
+            else{
 
-                box.innerText = e.Name
+                if(e.Name.includes(value)){
 
-                console.log(box);
+                    let text_names = document.createElement("p")
+                    text_names.innerText = e.Name
+                    suggestion_box.appendChild(text_names)
 
-                console.log(suggestion_box);
+                    console.log(e.Name)
+                }
+                else{
 
-                suggestion_box.appendChild(box)
-
-            } else {
-
-                suggestion_box.innerHTML = ""
+                    // suggestion_box.innerText=""
+                }
             }
+
+
+
 
         })
     })
