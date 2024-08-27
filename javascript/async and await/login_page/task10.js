@@ -53,7 +53,13 @@ function adddata() {
             let details = []
             details.push(user)
             localStorage.setItem("user_details", JSON.stringify(details))
-        } else {
+
+        } else if (userget == userget) {
+
+            alert("Enter Unique values")
+        }
+
+        else {
 
             userget.push(user)
 
