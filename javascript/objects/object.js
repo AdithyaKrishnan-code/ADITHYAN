@@ -12,6 +12,8 @@ let obj = {
 
 obj.grade = "A+"
 
+console.log(aadress.state)
+
 const data = JSON.stringify(obj)
 
 console.log(JSON.parse(data));
