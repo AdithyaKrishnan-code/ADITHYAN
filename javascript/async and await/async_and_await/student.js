@@ -6,6 +6,7 @@ console.log(suggestion_box);
 
 let result = []
 
+// async function to fetch json
 
 async function data_fetch(student) {
 
@@ -18,9 +19,12 @@ async function data_fetch(student) {
 
     return data_fetched
 }
+// ------------------------------------------------------------------------
+
+// promise function
 
 data_fetch("student.json").then((data) => {
-
+    
     console.log("inside then", data);
 
     search_bar.addEventListener("input", () => {
