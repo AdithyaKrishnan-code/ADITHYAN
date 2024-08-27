@@ -7,11 +7,6 @@ body{
     background-color: rgb(174, 174, 174);
 }
 
-button:hover{
-
-    box-shadow: inset 3px 2px 5px 2px rgb(55 55 55)
-}
-
 
 .mainpage{
 
@@ -22,19 +17,8 @@ button:hover{
     align-items: center;
     background-color: rgb(92, 92, 92);
     border-radius: 30px;
-    position: relative;
 }
 
-.arrow{
-
-    width: 50px;
-    height: 20px;
-    border: solid black 2px;
-    position: absolute;
-    top: 3%;
-    left: 3%;
-    border-radius: 9px;
-}
 
 .loginbox{
 
@@ -105,7 +89,7 @@ button:hover{
     width: 135px;
     height: 46px;
     border-radius: 30px;
-    /* box-shadow: 4px 5px 4px 4px rgb(55 55 55) */
+    box-shadow: 4px 5px 4px 4px rgb(55 55 55)
 }
 
 
