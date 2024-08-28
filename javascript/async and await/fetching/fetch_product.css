@@ -6,6 +6,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 
@@ -48,6 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: end;
+    padding-top:  20%;
    
     
 
@@ -153,3 +155,15 @@
     padding: 20px;
     height: fit-content;
 }
+
+.back_button{
+
+    width: 10%;
+    height: 9%;
+    border-radius: 20px;
+    position: absolute;
+    left: 2%;
+    bottom: 100%;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------- */

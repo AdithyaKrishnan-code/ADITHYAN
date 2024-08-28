@@ -16,6 +16,9 @@ let rating_of_the_product = document.getElementById("rating")
 
 let description_of_the_product = document.getElementById("description")
 
+let back_button = document.getElementById("refresh_button")
+
+
 
 
 main_page_2.style.display = "none"
@@ -73,11 +76,14 @@ data_fetch(link).then((data)=>{
             rating_of_the_product.innerHTML = "RATING" + "  :   " + JSON.stringify(data[index].rating.rate)+"/5"
 
             description_of_the_product.innerHTML = JSON.stringify(data[index].description)
-
-
-
    
+        })
 
+        back_button.addEventListener("click",()=>{
+
+            main_page_2.style.display = "none"
+
+            item_box.style.display = "flex"
         })
 
         
