@@ -1,6 +1,8 @@
 body{
-
-    padding: none;
+    padding: 0%;
+    margin: 0%;
+    overflow-x: hidden;
+    background-color: #101010;
 }
 
 .page_1{
@@ -8,6 +10,16 @@ body{
     width: 100%;
     height: 100vh;
     border: solid black 2px;
+    /* background-color: aqua; */
+    /* background-color: black; */
+    background-image: url("Abstract_Design.svg");
+    background-repeat: no-repeat;
+    background-color: #101010;
+    padding: 2px;
+    padding-top: 3px;
+    
+
+   
 }
 /* ----------------------------------------------------navbar-------------------------------------------------------------------------------- */
 .navbar{
@@ -58,9 +70,9 @@ body{
 #pages{
     position: absolute;
     width: 40%;
-    left: 27%;
+    left: 32%;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
 }
 
@@ -127,7 +139,7 @@ body{
 
     width: 100%;
     height: 90%;
-    border: solid black 2px;
+    /* border: solid black 2px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,13 +150,15 @@ body{
     width: 40%;
     height: 70%;
     border: solid black 2px;
+    background-color: #101010;
+    color: #FFFFFF;
 }
 
 .information_about_bank{
 
     width: 60%;
     height: 11%;
-    border: solid black 2px;
+    /* border: solid black 2px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,7 +196,20 @@ body{
 
     width: 85%;
     height: 67%;
-    border: solid black 2px;
+    /* border: solid black 2px; */
+    font-family: Lexend;
+
+}
+.text2{
+
+    font-size: 200%;
+    font-weight: bolder;
+
+}
+.text{
+
+    font-size: 95%;
+    font-weight: lighter;
 }
 
 .get_started{
@@ -191,8 +218,14 @@ body{
     height: 10%;
     font-family: Lexend;
     border-radius: 25px;
+    background-color: #262626;
+    color:#FFFFFF ;
+    border: none;
 }
+.get_started:hover{
 
+    background-color: #383838;
+}
 #bank_info{
 
     display: flex;
