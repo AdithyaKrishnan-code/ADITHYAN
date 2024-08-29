@@ -1,0 +1,186 @@
+body{
+
+    padding: none;
+}
+
+.page_1{
+
+    width: 100%;
+    height: 100vh;
+    border: solid black 2px;
+}
+/* ----------------------------------------------------navbar-------------------------------------------------------------------------------- */
+.navbar{
+
+    width: 100%;
+    height: 10%;
+    /* border:  solid 2px black; */
+    border-radius: 40px;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    background-color: #1C1C1C;
+    font-family: Lexend;
+    font-weight: 400;
+}
+
+.options{
+
+    width: 10%;
+    height: 90%;
+    /* border: solid 2px black; */
+}
+
+#symbol{
+
+    position: absolute;
+    left: 41px;
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.symbol_image{
+
+    width: 45%;
+    height: 70%;
+    /* border: solid 2px black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+#pages{
+    position: absolute;
+    width: 40%;
+    left: 27%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.diff_pages{
+
+    width: 20%;
+    height: 69%;
+    /* border: solid 2px black; */
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #1C1C1C;
+    border: none;
+    font-family: Lexend;
+    font-weight: 400;
+}
+
+.diff_pages:hover{
+
+    background-color: #383838;
+}
+
+#authentication{
+
+    position: absolute;
+    width: 20%;
+    left: 77%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.registering{
+
+    width: 46%;
+    height: 69%;
+    /* border: solid 2px black; */
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #1C1C1C;
+    border: none;
+    font-family: Lexend;
+    font-weight: 400;
+
+}
+
+.registering:hover{
+
+    background-color: #CAFF33;
+    color: #1C1C1C;
+}
+
+/* ------------------------------------------------------------------navbar over----------------------------------------------------------- */
+
+/* ----------------------------------------------------page_1_content-------------------------------------------------------------------------------- */
+
+.page_1_content{
+
+    width: 100%;
+    height: 90%;
+    border: solid black 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content:space-around;
+}
+.content{
+
+    width: 40%;
+    height: 70%;
+    border: solid black 2px;
+}
+
+.information_about_bank{
+
+    width: 60%;
+    height: 11%;
+    border: solid black 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-around; */
+    border-radius: 35px;
+    position: relative;
+    background-color: #262626;
+    color:#FFFFFF ;
+}
+
+.message{
+
+    width: 20%;
+    height: 95%;
+    /* border: solid black 2px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0%;
+    font-family: Lexend;
+    font-size: 91%;
+
+}
+
+#credit_info{
+
+    width: 69%;
+    position: absolute;
+    left: 16%;
+
+}
+
+.welcome_message{
+
+    width: 85%;
+    height: 67%;
+    border: solid black 2px;
+}
