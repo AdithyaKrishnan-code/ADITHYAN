@@ -184,3 +184,22 @@ body{
     height: 67%;
     border: solid black 2px;
 }
+
+.get_started{
+
+    width: 24%;
+    height: 10%;
+    font-family: Lexend;
+    border-radius: 25px;
+}
+
+#bank_info{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    justify-content:space-around;
+
+    
+}
