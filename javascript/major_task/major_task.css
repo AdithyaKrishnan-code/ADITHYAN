@@ -10,12 +10,9 @@ body{
     width: auto;
     height: 100vh;
     /* border: solid white 2px; */
-    /* background-color: aqua; */
-    /* background-color: black; */
     background-image: url("Abstract_Design.svg");
     background-repeat: no-repeat;
     background-color: #101010;
-    /* padding: 2px; */
     padding-top: 13px;
     padding-left: 120px;
     padding-right: 120px;
@@ -161,8 +158,8 @@ body{
 
 .information_about_bank{
 
-    width: 60%;
-    height: 11%;
+    width: 77%;
+    height: 9%;
     /* border: solid black 2px; */
     display: flex;
     justify-content: center;
@@ -696,4 +693,265 @@ body{
         border-radius: 200px;
 
     }
+}
+/* ------------------------------------------------------------------ends here home page and page 2------------------------------------------------------------------------------------------------------------- */
+
+/* --------------------------------------------login page-------------------------------------------------------------------------------------------------------------- */
+
+
+#login_page{
+
+    background: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    
+}
+
+#login_area{
+
+    /* border: solid 2px white; */
+    width: 99%;
+    height: 75%;
+    background-image: url("Login.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 34px;
+    
+}
+
+.login_credentials{
+
+    height: 75%;
+    width: 80%;
+    /* border: solid white 2px; */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content:center ;
+    align-items: center;
+}
+
+#login_page_message{
+
+    height: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages_of_login{
+
+    width: 90%;
+    height: 30%;
+    /* border: solid 2px white; */
+    font-family: lexend;
+    color: #CAFF33;
+    text-align: center;
+}
+
+#login_heading{
+
+    height: 50%; 
+    font-size: 200%;
+}
+
+.inputs_for_login{
+
+    width: 80%;
+    height: 40%;
+    /* border: solid 2px white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#login_tabs{
+
+    height: 20%;
+    width: 80%;
+}
+
+.inputs{
+    
+    width: 40%;
+    height: 60%;
+    background-color: transparent;
+    border: solid #262626 2px;
+    border-radius: 20px;
+    font-family: Lexend;
+    color: #FFFFFF;
+    padding-left: 20px;
+}
+
+#login_buttons_and_helps{
+
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+}
+.remaining_deatails{
+
+    width: 40%;
+    height: 10%;
+    /* border: solid white 2px; */
+    position: relative;
+}
+
+#forgot_password{
+
+    height: fit-content;
+    font-family: Lexend;
+    text-align: center;
+    font-size: 77%;
+}
+
+#login_buttons{
+
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom: solid white 2px;
+
+}
+
+.button1{
+
+    width: 92%;
+    height: 23%;
+    border: none;
+    font-family: Lexend;
+    border-radius: 20px;
+    background-color: #262626;
+    color: #FFFFFF;
+}
+
+.button1:hover{
+
+    background-color: #CAFF33;
+    color: #1C1C1C;
+}
+
+.continue_with{
+
+    width: 57%;
+    height: 10%;
+    /* border: solid white 2px; */
+    position: absolute;
+    top: 94%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    /* background-color: #262626; */
+    /* padding-left: 20px; */
+}
+.text_for_coninue_with{
+
+    height: 50%;
+    width: 81%;
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    font-family: Lexend;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 77%;
+}
+
+#social_media{
+
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.big3{
+
+    width: 28%;
+    height: 62%;
+    /* border: solid 2px white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+     background-image: linear-gradient(#CAFF331A,#CAFF3300);
+     border-radius: 40px;
+}
+
+.social_symbol{
+
+    width: 78%;
+    height: 77%;
+    /* border: solid 2px white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    /* background-image: linear-gradient(#CAFF331A,#CAFF3300); */
+}
+
+.social_symbol:hover{
+
+    background-image: linear-gradient(#CAFF331A,#CAFF3300);
+    border: #CAFF33;
+
+}
+
+.company{
+
+    width: 72%;
+    height: 72%;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page_3{
+
+    width: auto;
+    height: 100vh;
+    /* border: solid white 2px; */
+    background-color: #101010;
+    
+
+   
+}
+#footer{
+
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #101010;
+    background: #101010;
+
+}
+
+.footer_details{
+
+    height: 50%;
+    width: 100%;
+    /* border: solid 2px white; */
+    padding: 0%;
+    background-image: url("fotter.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
