@@ -9,7 +9,7 @@ body{
 
     width: auto;
     height: 100vh;
-    border: solid black 2px;
+    /* border: solid white 2px; */
     /* background-color: aqua; */
     /* background-color: black; */
     background-image: url("Abstract_Design.svg");
@@ -154,7 +154,7 @@ body{
 
     width: 40%;
     height: 70%;
-    border: solid black 2px;
+    /* border: solid black 2px; */
     background-color: #101010;
     color: #FFFFFF;
 }
@@ -198,7 +198,9 @@ body{
 }
 
 .welcome_message{
-
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 85%;
     height: 67%;
     /* border: solid black 2px; */
@@ -215,6 +217,7 @@ body{
 
     font-size: 95%;
     font-weight: lighter;
+    color: #E4E4E7;
 }
 
 .get_started{
@@ -245,7 +248,12 @@ body{
 
 #second_content_box{
     display:flex ;
-    width: 30%;
+    width: 50%;
+    height: 85%;
+    background-image: url("group_1.svg");
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
 }
 
 .content_2{
@@ -274,4 +282,418 @@ body{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* ----------------------------------------------------------------------page 1 over---------------------------------------------------------------- */
+
+
+/* ------------------------------------------------------------------------page2--------------------------------------------------------------------------------- */
+
+#main_page2{
+    /* height: 100vh; */
+    /* width: auto; */
+    background-image: none;
+    background-color: #101010;
+    padding-left: 138px;
+    /* display: flex;
+    justify-content: center; */
+}
+.textarea{
+
+    width: 100%;
+    height: 20%;
+    /* border: 2px white solid; */
+}
+.our_services{
+
+    font-size: 200%;
+}
+.services{
+
+    width: 100%;
+    height: 30%;
+    /* border: 2px white solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.type_of_services{
+
+    width: 20%;
+    height: 75%;
+    /* border: 2px white solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+
+}
+
+.symbol_of_service{
+
+    width: 80%;
+    height: 20%;
+    /* border: white 2px solid; */
+    
+
+}
+
+#symbol_img{
+
+    height: 50%;
+    width: 32%;
+    border-radius: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#CAFF331A,#CAFF3300);
+
+}
+
+.symbol_icon{
+
+    width: 70%;
+    height: 70%;
+    /* border: white 2px solid; */
+    border-radius: 51px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.symbol_button{
+
+    background-color: transparent;
+    border: none;
+}
+
+.symbol_icon:hover{
+
+    background-image: linear-gradient(#CAFF331A,#CAFF3300);
+    border: #CAFF33;
+
+}
+
+#symbol_about{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.symbol_details{
+
+    font-family: Lexend;
+    color: #FFFFFF;
+
+}
+
+/* --------------------------------------------------------------------------------second page over----------------------------------------------------------------------------------- */
+
+/* --------------------------------------respondsive design------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+
+    .page_1{
+
+        display: flex   ;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        padding: 20PX;
+        gap: 20PX;
+        /* border: solid white 2px; */
+        height:150vh
+    }
+
+    .page_1_content{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+   
+    #pages {
+
+        display: none;
+        }
+
+    #authentication {
+
+        display: none;
+        
+    }
+    #nav_bar{
+
+        width: 300px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        height: 6%;
+    }
+    .symbol_image{
+
+        padding-left: 47px;
+    }
+    .content{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* padding-left: 20px; */
+        gap: 20px;
+    }
+    .information_about_bank{
+
+        width: 250px;
+        font-size: 70%;
+        height: 75px;
+       
+    }
+    .welcome_message{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 68%;
+        padding-top: 20px;
+        
+    }
+
+    .text{
+
+        height: 69%;
+        width: 242%;
+        /* border: solid 2px white; */
+        display: flex;
+        justify-content: center;
+        font-size: 115%;
+        text-align: center;
+        
+    }
+
+    .text2{
+
+        height: 69%;
+        width: 268%;
+        text-align: center;
+    }
+
+    #bank_info{
+
+        font-size: 100%;
+    }
+
+    .get_started{
+
+        width: 100%;
+        height: 16%;
+    }
+
+    #second_content_box{
+
+        height: 80%;
+        width: 100%;
+        background-image: url("mobile.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        /* border: solid 2px white; */
+    }
+
+    /* -----------------------------------------------------page2 respondsiveness starts from here---------------------------------------------------------------- */
+
+    #main_page2{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding : 0px;
+        gap: 40px;
+    }
+    .textarea{
+
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .services{
+
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        
+    }
+    
+    #symbol_img{
+
+        width: 100%;
+        height: 200%;
+        border-radius: 200px;
+
+    }
+}
+
+/* -------------------------------------------------------page2 over------------------------------------------------------------------------------------------- */
+
+
+/* ------------------------------------------------------------------------for tablets------------------------------------------- */
+
+
+@media only screen and (max-width: 770px) {
+
+    .page_1{
+
+        display: flex   ;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        padding: 20PX;
+        gap: 20PX;
+        /* border: solid white 2px; */
+        height:150vh
+    }
+
+    .page_1_content{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+   
+    #pages {
+
+        display: none;
+        }
+
+    #authentication {
+
+        display: none;
+        
+    }
+    #nav_bar{
+
+        width: 90%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        height: 6%;
+    }
+    .symbol_image{
+
+        padding-left: 47px;
+    }
+    .content{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* padding-left: 20px; */
+        gap: 20px;
+    }
+    .information_about_bank{
+
+        width: 250px;
+        font-size: 70%;
+        height: 75px;
+       
+    }
+    .welcome_message{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 68%;
+        padding-top: 20px;
+        
+    }
+
+    .text{
+
+        height: 69%;
+        width: 242%;
+        /* border: solid 2px white; */
+        display: flex;
+        justify-content: center;
+        font-size: 115%;
+        text-align: center;
+        
+    }
+
+    .text2{
+
+        height: 69%;
+        width: 268%;
+        text-align: center;
+    }
+
+    #bank_info{
+
+        font-size: 100%;
+    }
+
+    .get_started{
+
+        width: 100%;
+        height: 16%;
+    }
+
+    #second_content_box{
+
+        height: 80%;
+        width: 100%;
+        background-image: url("mobile.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        /* border: solid 2px white; */
+    }
+
+    /* -----------------------------------------------------page2 respondsiveness starts from here---------------------------------------------------------------- */
+
+    #main_page2{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding : 0px;
+        gap: 40px;
+    }
+    .textarea{
+
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .services{
+
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        
+    }
+    
+    #symbol_img{
+
+        width: 100%;
+        height: 200%;
+        border-radius: 200px;
+
+    }
 }
