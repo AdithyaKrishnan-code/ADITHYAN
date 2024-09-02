@@ -16,6 +16,7 @@ body{
     padding-top: 13px;
     padding-left: 120px;
     padding-right: 120px;
+    gap: 50px;
     
 
    
@@ -354,8 +355,8 @@ body{
 
 .symbol_icon{
 
-    width: 70%;
-    height: 70%;
+    width: 86%;
+    height: 86%;
     /* border: white 2px solid; */
     border-radius: 51px;
     display: flex;
@@ -955,3 +956,175 @@ body{
     background-repeat: no-repeat;
 
 }
+
+/* -----------------------------------------------login page over------------------------------------------------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------login page respondsive----------------------------------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+
+    #login_area{
+
+        width: 111%
+    }
+
+    #login_tabs{
+
+        display: flex   ;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .inputs{
+
+        width: 127%;
+        height: 46%;
+    }
+
+    .remaining_deatails {
+        width: 147%;
+    }
+
+    .button1{
+
+        width: 96%;
+    }
+
+    .big3{
+
+        width: 27%;
+        height: 54%;
+    }
+
+    .footer_details{
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+
+}
+
+/* -------------------------------------------------------respondsive design over------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------signup page------------------------------------------------------------------------------------------ */
+
+#signup_page{
+
+    background: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    
+}
+
+
+#signup_tabs {
+    display: flex;
+    flex-wrap: wrap;
+    height: 20%;
+    width: 80%;
+    gap: 20px;
+}
+
+#signup_area {
+    /* border: solid 2px white; */
+    width: 99%;
+    height: 78%;
+    background-image: url(Login.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 34px;
+}
+
+#signup_buttons_and_helps {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    padding-top: 13px;
+}
+
+.inputs_for_sigup {
+    width: 40%;
+    height: 60%;
+    background-color: transparent;
+    border: solid #262626 2px;
+    border-radius: 46px;
+    font-family: Lexend;
+    color: #FFFFFF;
+    padding-left: 20px;
+}
+
+.remaining_details_for_signup {
+    width: 47%;
+    height: 10%;
+    /* border: solid white 2px; */
+    position: relative;
+}
+
+/* ------------------------------------signup page complete---------------------------------------------------- */
+
+/* --------------------------------------------------------------------------sigup page respoonsive design---------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+
+    #signup_area{
+
+        width: 111%;
+        height: 100%;
+        display: flex;
+        gap: 114px;
+    }
+
+    #signup_tabs{
+
+        display: flex   ;
+        /* flex-direction: column; */
+        justify-content:center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 18px;
+        height: 21%;
+        width: 118%;
+    }
+
+    .inputs_for_sigup{
+
+        width: 127%;
+        height: 39%;
+    }
+
+    .remaining_details_for_signup {
+        width: 147%;
+        padding-top: 111px;
+    }
+
+    .button1{
+
+        width: 96%;
+    }
+
+    .big3{
+
+        width: 27%;
+        height: 54%;
+    }
+
+    .footer_details{
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+
+}
+
+/* -------------------------------------------------respondsive design for signup page is over------------------------------------------------------------------------------------------------------------- */
