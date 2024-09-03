@@ -70,6 +70,8 @@ body {
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
+    background-color: transparent;
+    border: none;
 }
 
 #pages {
@@ -1437,7 +1439,7 @@ body {
 
 .page_3::backdrop {
   
-    background-color: #000000;
+    background-color: #0a0a0a;
     opacity: 0.6;
 
 }
@@ -1550,4 +1552,30 @@ body {
 
     padding-right: 20px;
     
+}
+#deposit_amount_input_field{
+
+    padding-right: 20px;
+}
+/* ------------------------------------------------------------------account_details------------------------------------------------------------------------------------------- */
+
+#account_details{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+}
+.account_info{
+
+    width: 57%;
+    height: 19%;
+    border: solid 2px rgb(124, 121, 121);
+    border-radius: 49px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
 }
