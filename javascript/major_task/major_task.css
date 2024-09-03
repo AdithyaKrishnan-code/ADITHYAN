@@ -1,11 +1,13 @@
-body{
+body {
     padding: 0%;
     margin: 0%;
     overflow-x: hidden;
     background-color: #101010;
+    font-family: Lexend;
+
 }
 
-.page_1{
+.page_1 {
 
     width: auto;
     height: 100vh;
@@ -17,35 +19,38 @@ body{
     padding-left: 120px;
     padding-right: 120px;
     gap: 50px;
-    
 
-   
+
+
+
 }
+
 /* ----------------------------------------------------navbar-------------------------------------------------------------------------------- */
-.navbar{
+.navbar {
 
     width: 100%;
     height: 10%;
     /* border:  solid 2px black; */
     border-radius: 40px;
     display: flex;
-    justify-content:center ;
+    justify-content: center;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
     background-color: #1C1C1C;
     font-family: Lexend;
     font-weight: 400;
+    position: relative;
 }
 
-.options{
+.options {
 
     width: 10%;
     height: 90%;
     /* border: solid 2px black; */
 }
 
-#symbol{
+#symbol {
 
     position: absolute;
     left: 41px;
@@ -56,7 +61,7 @@ body{
 
 }
 
-.symbol_image{
+.symbol_image {
 
     width: 45%;
     height: 70%;
@@ -67,7 +72,7 @@ body{
     color: #FFFFFF;
 }
 
-#pages{
+#pages {
     position: absolute;
     width: 40%;
     left: 32%;
@@ -76,7 +81,7 @@ body{
     align-items: center;
 }
 
-.diff_pages{
+.diff_pages {
 
     width: 20%;
     height: 69%;
@@ -92,12 +97,12 @@ body{
     font-weight: 400;
 }
 
-.diff_pages:hover{
+.diff_pages:hover {
 
     background-color: #383838;
 }
 
-#authentication{
+#authentication {
 
     position: absolute;
     width: 20%;
@@ -108,7 +113,7 @@ body{
 
 }
 
-.registering{
+.registering {
 
     width: 46%;
     height: 69%;
@@ -125,17 +130,24 @@ body{
 
 }
 
-.registering:hover{
+.registering:hover {
 
     background-color: #CAFF33;
     color: #1C1C1C;
+}
+
+#hamburger_icon {
+
+    height: 74%;
+    width: 74%;
+    display: none;
 }
 
 /* ------------------------------------------------------------------navbar over----------------------------------------------------------- */
 
 /* ----------------------------------------------------page_1_content-------------------------------------------------------------------------------- */
 
-.page_1_content{
+.page_1_content {
 
     width: 100%;
     height: 90%;
@@ -148,7 +160,8 @@ body{
     padding-left: 20px;
     padding-right: 20px;
 }
-.content{
+
+.content {
 
     width: 40%;
     height: 70%;
@@ -157,7 +170,7 @@ body{
     color: #FFFFFF;
 }
 
-.information_about_bank{
+.information_about_bank {
 
     width: 77%;
     height: 9%;
@@ -169,10 +182,10 @@ body{
     border-radius: 35px;
     position: relative;
     background-color: #262626;
-    color:#FFFFFF ;
+    color: #FFFFFF;
 }
 
-.message{
+.message {
 
     width: 20%;
     height: 95%;
@@ -187,7 +200,7 @@ body{
 
 }
 
-#credit_info{
+#credit_info {
 
     width: 69%;
     position: absolute;
@@ -195,7 +208,7 @@ body{
 
 }
 
-.welcome_message{
+.welcome_message {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -205,47 +218,51 @@ body{
     font-family: Lexend;
 
 }
-.text2{
+
+.text2 {
 
     font-size: 200%;
     font-weight: bolder;
 
 }
-.text{
+
+.text {
 
     font-size: 95%;
     font-weight: lighter;
     color: #E4E4E7;
 }
 
-.get_started{
+.get_started {
 
     width: 24%;
     height: 10%;
     font-family: Lexend;
     border-radius: 25px;
     background-color: #262626;
-    color:#FFFFFF ;
+    color: #FFFFFF;
     border: none;
 }
-.get_started:hover{
+
+.get_started:hover {
 
     background-color: #CAFF33;
     color: #1C1C1C;
 }
-#bank_info{
+
+#bank_info {
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
-    justify-content:space-around;
+    justify-content: space-around;
 
-    
+
 }
 
-#second_content_box{
-    display:flex ;
+#second_content_box {
+    display: flex;
     width: 50%;
     height: 85%;
     background-image: url("group_1.svg");
@@ -254,7 +271,7 @@ body{
     background-repeat: no-repeat;
 }
 
-.content_2{
+.content_2 {
 
     border: white 2px solid;
     height: 50%;
@@ -262,7 +279,7 @@ body{
 
 }
 
-#monthly_income{
+#monthly_income {
 
     position: absolute;
     left: 44%;
@@ -272,7 +289,7 @@ body{
     border-radius: 15px;
 }
 
-#vector_image{
+#vector_image {
 
     position: absolute;
     left: 73.5%;
@@ -288,7 +305,7 @@ body{
 
 /* ------------------------------------------------------------------------page2--------------------------------------------------------------------------------- */
 
-#main_page2{
+#main_page2 {
     /* height: 100vh; */
     /* width: auto; */
     background-image: none;
@@ -297,17 +314,20 @@ body{
     /* display: flex;
     justify-content: center; */
 }
-.textarea{
+
+.textarea {
 
     width: 100%;
     height: 20%;
     /* border: 2px white solid; */
 }
-.our_services{
+
+.our_services {
 
     font-size: 200%;
 }
-.services{
+
+.services {
 
     width: 100%;
     height: 30%;
@@ -318,7 +338,7 @@ body{
     justify-content: space-around;
 }
 
-.type_of_services{
+.type_of_services {
 
     width: 20%;
     height: 75%;
@@ -332,16 +352,16 @@ body{
 
 }
 
-.symbol_of_service{
+.symbol_of_service {
 
     width: 80%;
     height: 20%;
     /* border: white 2px solid; */
-    
+
 
 }
 
-#symbol_img{
+#symbol_img {
 
     height: 50%;
     width: 32%;
@@ -349,41 +369,42 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(#CAFF331A,#CAFF3300);
+    background-image: linear-gradient(#CAFF331A, #CAFF3300);
 
 }
 
-.symbol_icon{
+.symbol_icon {
 
     width: 86%;
     height: 86%;
     /* border: white 2px solid; */
     border-radius: 51px;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
 
-.symbol_button{
+.symbol_button {
 
     background-color: transparent;
     border: none;
 }
 
-.symbol_icon:hover{
+.symbol_icon:hover {
 
-    background-image: linear-gradient(#CAFF331A,#CAFF3300);
+    background-image: linear-gradient(#CAFF331A, #CAFF3300);
     border: #CAFF33;
 
 }
 
-#symbol_about{
+#symbol_about {
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.symbol_details{
+
+.symbol_details {
 
     font-family: Lexend;
     color: #FFFFFF;
@@ -396,49 +417,64 @@ body{
 
 @media only screen and (max-width: 600px) {
 
-    .page_1{
+    .page_1 {
 
-        display: flex   ;
+        display: flex;
         flex-direction: column;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         padding: 20PX;
         gap: 20PX;
         /* border: solid white 2px; */
-        height:150vh
+        height: 150vh
     }
 
-    .page_1_content{
+    .page_1_content {
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-   
+
     #pages {
 
         display: none;
-        }
+    }
 
     #authentication {
 
         display: none;
-        
+
     }
-    #nav_bar{
+
+    #nav_bar {
 
         width: 300px;
         box-sizing: border-box;
         display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
         justify-content: space-between;
         height: 6%;
+        padding-right: 20px;
     }
-    .symbol_image{
+
+    #hamburger_icon {
+
+        display: flex;
+        height: 51%;
+        width: 12%;
+        border-radius: 16px;
+    }
+
+
+    .symbol_image {
 
         padding-left: 47px;
     }
-    .content{
+
+    .content {
 
         display: flex;
         justify-content: center;
@@ -447,14 +483,16 @@ body{
         /* padding-left: 20px; */
         gap: 20px;
     }
-    .information_about_bank{
+
+    .information_about_bank {
 
         width: 250px;
         font-size: 70%;
         height: 75px;
-       
+
     }
-    .welcome_message{
+
+    .welcome_message {
 
         display: flex;
         flex-direction: column;
@@ -462,10 +500,10 @@ body{
         align-items: center;
         font-size: 68%;
         padding-top: 20px;
-        
+
     }
 
-    .text{
+    .text {
 
         height: 69%;
         width: 242%;
@@ -474,28 +512,28 @@ body{
         justify-content: center;
         font-size: 115%;
         text-align: center;
-        
+
     }
 
-    .text2{
+    .text2 {
 
         height: 69%;
         width: 268%;
         text-align: center;
     }
 
-    #bank_info{
+    #bank_info {
 
         font-size: 100%;
     }
 
-    .get_started{
+    .get_started {
 
         width: 100%;
         height: 16%;
     }
 
-    #second_content_box{
+    #second_content_box {
 
         height: 80%;
         width: 100%;
@@ -508,32 +546,34 @@ body{
 
     /* -----------------------------------------------------page2 respondsiveness starts from here---------------------------------------------------------------- */
 
-    #main_page2{
+    #main_page2 {
 
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding : 0px;
+        padding: 0px;
         gap: 40px;
     }
-    .textarea{
+
+    .textarea {
 
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .services{
+
+    .services {
 
 
         display: flex;
         flex-direction: column;
         gap: 20px;
         text-align: center;
-        
+
     }
-    
-    #symbol_img{
+
+    #symbol_img {
 
         width: 100%;
         height: 200%;
@@ -550,49 +590,64 @@ body{
 
 @media only screen and (max-width: 770px) {
 
-    .page_1{
+    .page_1 {
 
-        display: flex   ;
+        display: flex;
         flex-direction: column;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         padding: 20PX;
         gap: 20PX;
         /* border: solid white 2px; */
-        height:150vh
+        height: 150vh
     }
 
-    .page_1_content{
+    .page_1_content {
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-   
+
     #pages {
 
         display: none;
-        }
+    }
 
     #authentication {
 
         display: none;
-        
-    }
-    #nav_bar{
 
-        width: 90%;
+    }
+
+    #nav_bar {
+
+        width: 300px;
         box-sizing: border-box;
         display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
         justify-content: space-between;
         height: 6%;
+        padding-right: 20px;
     }
-    .symbol_image{
+
+    #hamburger_icon {
+
+        display: flex;
+        height: 51%;
+        width: 12%;
+        border-radius: 16px;
+    }
+
+
+    .symbol_image {
 
         padding-left: 47px;
     }
-    .content{
+
+    .content {
 
         display: flex;
         justify-content: center;
@@ -601,14 +656,16 @@ body{
         /* padding-left: 20px; */
         gap: 20px;
     }
-    .information_about_bank{
+
+    .information_about_bank {
 
         width: 250px;
         font-size: 70%;
         height: 75px;
-       
+
     }
-    .welcome_message{
+
+    .welcome_message {
 
         display: flex;
         flex-direction: column;
@@ -616,10 +673,10 @@ body{
         align-items: center;
         font-size: 68%;
         padding-top: 20px;
-        
+
     }
 
-    .text{
+    .text {
 
         height: 69%;
         width: 242%;
@@ -628,28 +685,28 @@ body{
         justify-content: center;
         font-size: 115%;
         text-align: center;
-        
+
     }
 
-    .text2{
+    .text2 {
 
         height: 69%;
         width: 268%;
         text-align: center;
     }
 
-    #bank_info{
+    #bank_info {
 
         font-size: 100%;
     }
 
-    .get_started{
+    .get_started {
 
         width: 100%;
         height: 16%;
     }
 
-    #second_content_box{
+    #second_content_box {
 
         height: 80%;
         width: 100%;
@@ -660,34 +717,42 @@ body{
         /* border: solid 2px white; */
     }
 
+    .type_of_services {
+        width: 20%;
+        height: 41%;
+
+    }
+
     /* -----------------------------------------------------page2 respondsiveness starts from here---------------------------------------------------------------- */
 
-    #main_page2{
+    #main_page2 {
 
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding : 0px;
+        padding: 0px;
         gap: 40px;
     }
-    .textarea{
+
+    .textarea {
 
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .services{
+
+    .services {
 
 
         display: flex;
         flex-direction: column;
         gap: 20px;
         text-align: center;
-        
+
     }
-    
-    #symbol_img{
+
+    #symbol_img {
 
         width: 100%;
         height: 200%;
@@ -695,21 +760,22 @@ body{
 
     }
 }
+
 /* ------------------------------------------------------------------ends here home page and page 2------------------------------------------------------------------------------------------------------------- */
 
 /* --------------------------------------------login page-------------------------------------------------------------------------------------------------------------- */
 
 
-#login_page{
+#login_page {
 
     background: none;
     display: flex;
     justify-content: center;
     padding-top: 30px;
-    
+
 }
 
-#login_area{
+#login_area {
 
     /* border: solid 2px white; */
     width: 99%;
@@ -722,10 +788,10 @@ body{
     flex-direction: column;
     justify-content: center;
     border-radius: 34px;
-    
+
 }
 
-.login_credentials{
+.login_credentials {
 
     height: 75%;
     width: 80%;
@@ -733,11 +799,11 @@ body{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    justify-content:center ;
+    justify-content: center;
     align-items: center;
 }
 
-#login_page_message{
+#login_page_message {
 
     height: 12%;
     display: flex;
@@ -746,7 +812,7 @@ body{
     align-items: center;
 }
 
-.messages_of_login{
+.messages_of_login {
 
     width: 90%;
     height: 30%;
@@ -756,13 +822,13 @@ body{
     text-align: center;
 }
 
-#login_heading{
+#login_heading {
 
-    height: 50%; 
+    height: 50%;
     font-size: 200%;
 }
 
-.inputs_for_login{
+.inputs_for_login {
 
     width: 80%;
     height: 40%;
@@ -773,31 +839,32 @@ body{
     justify-content: space-around;
 }
 
-#login_tabs{
+#login_tabs {
 
     height: 20%;
     width: 80%;
 }
 
-.inputs{
-    
+.inputs {
+
     width: 40%;
     height: 60%;
     background-color: transparent;
     border: solid #262626 2px;
-    border-radius: 20px;
+    border-radius: 40px;
     font-family: Lexend;
     color: #FFFFFF;
     padding-left: 20px;
 }
 
-#login_buttons_and_helps{
+#login_buttons_and_helps {
 
     display: flex;
     flex-direction: column;
     height: 70%;
 }
-.remaining_deatails{
+
+.remaining_deatails {
 
     width: 40%;
     height: 10%;
@@ -805,7 +872,7 @@ body{
     position: relative;
 }
 
-#forgot_password{
+#forgot_password {
 
     height: fit-content;
     font-family: Lexend;
@@ -813,7 +880,7 @@ body{
     font-size: 77%;
 }
 
-#login_buttons{
+#login_buttons {
 
     height: 50%;
     display: flex;
@@ -825,7 +892,7 @@ body{
 
 }
 
-.button1{
+.button1 {
 
     width: 92%;
     height: 23%;
@@ -836,13 +903,13 @@ body{
     color: #FFFFFF;
 }
 
-.button1:hover{
+.button1:hover {
 
     background-color: #CAFF33;
     color: #1C1C1C;
 }
 
-.continue_with{
+.continue_with {
 
     width: 57%;
     height: 10%;
@@ -856,7 +923,8 @@ body{
     /* background-color: #262626; */
     /* padding-left: 20px; */
 }
-.text_for_coninue_with{
+
+.text_for_coninue_with {
 
     height: 50%;
     width: 81%;
@@ -870,7 +938,7 @@ body{
     font-size: 77%;
 }
 
-#social_media{
+#social_media {
 
     height: 40%;
     display: flex;
@@ -878,7 +946,7 @@ body{
     align-items: center;
 }
 
-.big3{
+.big3 {
 
     width: 28%;
     height: 62%;
@@ -888,11 +956,11 @@ body{
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-     background-image: linear-gradient(#CAFF331A,#CAFF3300);
-     border-radius: 40px;
+    background-image: linear-gradient(#CAFF331A, #CAFF3300);
+    border-radius: 40px;
 }
 
-.social_symbol{
+.social_symbol {
 
     width: 78%;
     height: 77%;
@@ -904,14 +972,14 @@ body{
     /* background-image: linear-gradient(#CAFF331A,#CAFF3300); */
 }
 
-.social_symbol:hover{
+.social_symbol:hover {
 
-    background-image: linear-gradient(#CAFF331A,#CAFF3300);
+    background-image: linear-gradient(#CAFF331A, #CAFF3300);
     border: #CAFF33;
 
 }
 
-.company{
+.company {
 
     width: 72%;
     height: 72%;
@@ -923,17 +991,18 @@ body{
     align-items: center;
 }
 
-.page_3{
+.page_3 {
 
     width: auto;
     height: 100vh;
     /* border: solid white 2px; */
     background-color: #101010;
-    
 
-   
+
+
 }
-#footer{
+
+#footer {
 
     display: flex;
     /* flex-direction: column; */
@@ -944,7 +1013,7 @@ body{
 
 }
 
-.footer_details{
+.footer_details {
 
     height: 50%;
     width: 100%;
@@ -963,21 +1032,21 @@ body{
 
 @media only screen and (max-width: 600px) {
 
-    #login_area{
+    #login_area {
 
         width: 111%
     }
 
-    #login_tabs{
+    #login_tabs {
 
-        display: flex   ;
+        display: flex;
         flex-direction: column;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         gap: 20px;
     }
 
-    .inputs{
+    .inputs {
 
         width: 127%;
         height: 46%;
@@ -987,23 +1056,23 @@ body{
         width: 147%;
     }
 
-    .button1{
+    .button1 {
 
         width: 96%;
     }
 
-    .big3{
+    .big3 {
 
         width: 27%;
         height: 54%;
     }
 
-    .footer_details{
+    .footer_details {
         height: 100%;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        
+
     }
 
 }
@@ -1012,13 +1081,14 @@ body{
 
 /* ------------------------------------------------------------------------signup page------------------------------------------------------------------------------------------ */
 
-#signup_page{
+#signup_page {
 
     background: none;
     display: flex;
     justify-content: center;
     padding-top: 30px;
-    
+
+
 }
 
 
@@ -1075,7 +1145,7 @@ body{
 
 @media only screen and (max-width: 600px) {
 
-    #signup_area{
+    #signup_area {
 
         width: 111%;
         height: 100%;
@@ -1083,11 +1153,11 @@ body{
         gap: 114px;
     }
 
-    #signup_tabs{
+    #signup_tabs {
 
-        display: flex   ;
+        display: flex;
         /* flex-direction: column; */
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         gap: 18px;
@@ -1095,7 +1165,7 @@ body{
         width: 118%;
     }
 
-    .inputs_for_sigup{
+    .inputs_for_sigup {
 
         width: 127%;
         height: 39%;
@@ -1106,25 +1176,378 @@ body{
         padding-top: 111px;
     }
 
-    .button1{
+    .button1 {
 
         width: 96%;
     }
 
-    .big3{
+    .big3 {
 
         width: 27%;
         height: 54%;
     }
 
-    .footer_details{
+    .footer_details {
         height: 100%;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        
+
     }
 
 }
 
 /* -------------------------------------------------respondsive design for signup page is over------------------------------------------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------page3------------------------------------------------------------------------------------- */
+
+#main_page3 {
+
+    background: #101010;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 166vh;
+}
+
+.page3_content {
+
+    width: 97%;
+    height: 73%;
+    /* border: solid white 2px; */
+
+}
+
+#page3_content_heading {
+
+    height: 8%;
+
+}
+
+.usecase {
+
+    font-size: 180%;
+}
+
+.usecase_about {
+
+    padding-top: 20px;
+}
+
+#page3_main_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+}
+
+.page3_content_grids {
+
+    width: 36%;
+    height: 36%;
+    /* border: solid 2px white; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-around; */
+    gap: 20px;
+    /* background-color: #1A1A1A; */
+
+}
+
+.page3_content_options {
+
+    width: 40%;
+    height: 40%;
+    border: solid 2px #262626;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-around; */
+    gap: 15px;
+    background-color: #1A1A1A;
+    border-radius: 20px;
+
+
+}
+
+#first_pair {
+
+    background-image: url("backround_for_pg3.svg");
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border: solid 2px #262626;
+}
+
+.content_image_and_about {
+
+    width: 33%;
+    height: 47%;
+    /* border: solid 2px white; */
+    background-image: linear-gradient(#CAFF331A, #CAFF3300);
+
+}
+
+#photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+
+.icon {
+    height: 74%;
+    width: 74%;
+    border: none;
+    border-radius: 36px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: linear-gradient(#CAFF331A, #CAFF3300); */
+}
+
+.icon:hover {
+
+    background-image: linear-gradient(#CAFF331A, #CAFF3300);
+    border: #CAFF33;
+
+}
+
+#name_of_the_photo {
+
+    height: 20%;
+    width: 100%;
+
+}
+
+#name_of_the_photo {
+
+    text-align: center;
+    background: #1A1A1A;
+}
+
+#second_pair {
+
+    /* display: flex; */
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.page3_content_grid_content2 {
+
+    width: 100%;
+    height: 20%;
+    /* border: solid 2px white; */
+
+}
+
+#For_Individuals {
+
+    height: 9%;
+    display: flex;
+    align-items: center;
+
+}
+
+#page3_content {
+
+    font-size: 77%;
+}
+
+#percentages {
+
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+
+.page3_icons {
+
+    width: 29%;
+    height: 72%;
+    border-right: dashed 2px white;
+}
+
+.page3_icons {
+
+    font-size: 86%;
+}
+
+.learn_more {
+
+    height: 74%;
+    width: 25%;
+    border: none;
+    border-radius: 20px;
+    background-color: #262626;
+    border: #383838;
+    font-family: Lexend;
+    color: #FFFFFF;
+}
+
+.learn_more:hover {
+
+    background-color: #CAFF33;
+    color: #101010;
+}
+
+#page3_symbol {
+
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+/* ------------------------------------------------------------------------over page_3-------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------deposit page-------------------------------------------------------------------------------------------------- */
+
+
+#deposit_page {
+
+    border: solid 2px rgb(79, 79, 79);
+    height: 460px;
+    width: 781px;
+    /* position: absolute;
+    top: 128%; */
+    border-radius: 43px;
+    background-image: url("backround_for_pg3.svg");
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    /* padding-top: 45px; */
+    padding-bottom: 0px;
+    /* padding-left: 132px; */
+
+}
+
+.page_3::backdrop {
+  
+    background-color: #000000;
+    opacity: 0.6;
+
+}
+
+.deposit_page_heading{
+
+    width:99%;;
+    height: 33%;
+    /* border: solid rgb(92, 90, 90) 2px; */
+}
+
+#deposit_page_main_heading_and_close_button{
+
+    height: 13%;
+    display: flex;
+}
+
+.deposit_page_top_contents{
+
+    width: 50%;
+    height: 100%;
+    /* border: solid white 2px; */
+}
+
+#deposit_heading{
+
+    width: 350%;
+    color: #CAFF33;
+    display: flex;
+    align-items: center;
+    font-size: 185%;
+    padding-top: 2px;
+    justify-content: center;
+}
+
+#close_button{
+
+    background-size: contain;
+    background-color: transparent;
+    background-position: center;
+    height: 43%;
+    width: 13%;
+    color:#FFFFFF;
+    border: none;
+    border-radius: 20px;
+}
+
+#close_button:hover{
+
+    background-color: #CAFF33;
+    color: #000000;
+}
+
+
+#depositing_account_details{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 64%;
+    border-top: none;
+    border-bottom: none;
+}
+
+.account_details{
+
+    width: 57%;
+    height: 19%;
+    border: none;
+    /* border-color: #383838; */
+    background-color:#383838 ;
+    color: #FFFFFF;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-family: Lexend;
+    box-sizing: border-box;
+
+}
+
+#deposit_button{
+
+    height: 11%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: none;
+}
+
+.deposit_confirmation{
+
+    height: 79%;
+    width: 37%;
+    background-color: #383838;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 20px;
+    font-family: Lexend;
+
+}
+
+.deposit_confirmation:hover{
+
+    background-color: #CAFF33;
+    color: #000000;
+}
+
+#deposit_amount{
+
+    padding-right: 20px;
+    
+}
