@@ -830,6 +830,12 @@ body {
     font-size: 200%;
 }
 
+#login_heading_login_page {
+
+    height: 50%;
+    font-size: 200%;
+}
+
 .inputs_for_login {
 
     width: 80%;
@@ -1578,4 +1584,17 @@ body {
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
+}
+
+
+/* ----------------------------------------------------------------classes for javascript------------------------------------------------------------------------------------------------------- */
+
+.signupmessage {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #CAFF33;
+    height: 50%;
+    font-size: 184%;
 }

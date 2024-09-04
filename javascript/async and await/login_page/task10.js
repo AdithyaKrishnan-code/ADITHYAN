@@ -27,7 +27,7 @@ let back_button = document.getElementById("arrow")
 email.style.display = "none"
 
 
-
+// console.log(username.value)
 
 
 
@@ -36,14 +36,18 @@ email.style.display = "none"
 function adddata() {
 
     user = {
+
         u_name: username.value,
         e_mail: email.value,
         p_word: password.value
     }
 
+    
+
     if (username.value == "" || email.value == "" || password.value == "") {
 
         alert("kindly enter all the details !!!!!!");
+    
     }
 
     else {

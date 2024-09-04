@@ -66,7 +66,7 @@ signup.addEventListener("click", () => {
 
 })
 
-home_button.addEventListener("click",()=>{
+home_button.addEventListener("click", () => {
 
     location.reload();
 })
@@ -108,7 +108,7 @@ withdraw_button.addEventListener("click", () => {
 
 })
 
-account_details_button.addEventListener("click",()=>{
+account_details_button.addEventListener("click", () => {
 
     deposit_page.showModal()
     deposit_account_details.style.display = "none"
@@ -125,7 +125,7 @@ account_details_button.addEventListener("click",()=>{
 
 })
 
-balance_details_button.addEventListener("click" , ()=>{
+balance_details_button.addEventListener("click", () => {
 
     deposit_page.showModal()
     deposit_account_details.style.display = "none"
@@ -139,5 +139,136 @@ balance_details_button.addEventListener("click" , ()=>{
 
     deposit_page.appendChild(account_info)
 })
+
+// -------------------------------------------------------signup -----------------------------------------------------------------------------------------------------------------------
+
+let userget = JSON.parse(localStorage.getItem("account_details"))
+
+let signup_page_first_name = document.getElementById("first_name_in_sign_up_page")
+
+let signup_page_second_name = document.getElementById("second_name_in_sign_up_page")
+
+let signup_page_email = document.getElementById("email_in_sign_up_page")
+
+let signup_page_password = document.getElementById("password_in_sign_up_page")
+
+let signup_button_for_creating_account = document.getElementById("signup_button_for_signning_up")
+
+let signup_details_area = document.getElementById("signup_area_with_details")
+
+let signup_successful_message = document.getElementById("message_for_signup_page")
+
+let signup_heading = document.getElementById("login_heading")
+
+console.log(signup_heading)
+
+function add_new_user() {
+
+    let userget = JSON.parse(localStorage.getItem("account_details"))
+
+    let generated_Account_number = Math.floor(Math.random() * 1000000000);
+
+    users = {
+
+        first_name: signup_page_first_name.value,
+        second_name: signup_page_second_name.value,
+        email: signup_page_email.value,
+        password: signup_page_password.value,
+        account_number: generated_Account_number,
+        // balance
+    }
+
+    if (signup_page_first_name.value == "" || signup_page_second_name.value == "" || signup_page_password.value == "" || signup_page_email.value == "") {
+
+        alert("kindly enter all the details !!!!!!");
+
+    }
+
+    else {
+
+
+        if (userget == null) {
+
+            let details = []
+
+            details.push(users)
+
+            localStorage.setItem("account_details", JSON.stringify(details))
+
+            signup_details_area.style.display = "none"
+
+            signup_heading.style.fontSize = "163%"
+
+            signup_heading.innerHTML = "Signup Successful with account number:" + users.account_number
+
+            signup_successful_message.innerText = "Your account has been created successfully!!"
+
+            // alert("signup succesful")
+
+
+        }
+
+
+        else if (userget != null) {
+
+            let emailexists = false
+
+            for (let i = 0; i < userget.length; i++) {
+
+                if (userget[i].email === signup_page_email.value) {
+
+                    emailexists = true
+
+                    // alert("not possible")
+
+                    signup_details_area.style.display = "none"
+
+                    signup_heading.innerHTML = "Signup Unsuccessful"
+
+                    signup_successful_message.innerText = "E-Mail has been already registerd"
+
+
+
+                    break
+
+
+                }
+
+            }
+
+            if (!emailexists) {
+
+                userget.push(users)
+
+                localStorage.setItem("account_details", JSON.stringify(userget))
+
+                userget = JSON.parse(localStorage.getItem("account_details"))
+
+                signup_details_area.style.display = "none"
+
+                signup_heading.style.fontSize = "163%"
+
+                signup_heading.innerHTML = "Signup Successful with account number:" + users.account_number
+
+                signup_successful_message.innerText = "Your account has been created successfully!! "
+
+                // alert("signup succesful")
+
+
+            }
+
+
+        }
+
+    }
+}
+
+signup_button_for_creating_account.addEventListener("click", add_new_user)
+
+
+// -----------------------------------------------------------login in--------------------------------------------------------------------------------------------------------------------
+
+
+
 
 
