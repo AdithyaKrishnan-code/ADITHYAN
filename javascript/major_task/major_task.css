@@ -1595,6 +1595,25 @@ body {
     justify-content: center;
     align-items: center;
     color: #CAFF33;
+    text-align: center;
+    padding-top: 51px;
     height: 50%;
-    font-size: 184%;
+    font-size: 131%;
+}
+
+#login_area_after_logging_in {
+    /* border: solid 2px white; */
+    width: 99%;
+    height: 75%;
+    background-image: url(Login.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 34px;
+    gap: 20px;
+    padding-bottom: 121px;
+    box-sizing: border-box;
 }

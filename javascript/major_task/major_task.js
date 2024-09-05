@@ -3,7 +3,7 @@ let home_page = document.getElementById("main_page1")
 let home_page_content = document.getElementById("basic_info")
 let nav_bar = document.getElementById("nav_bar")
 let home_page_content_2 = document.getElementById("main_page2")
-let home_button = document.getElementById("back_button")
+let home_button = document.getElementById("home_button")
 
 let login = document.getElementById("log_in_button")
 let login_page = document.getElementById("login_page")
@@ -34,6 +34,14 @@ let ifsc_of_holder = document.getElementById("ifsc_code")
 let balance_details_button = document.getElementById("symbol_icon_account_balance")
 
 
+let userget = JSON.parse(localStorage.getItem("account_details"))
+
+let button_to_signup_page_from_login_page = document.getElementById("to_go_to_signup_page")
+let button_to_log_in_page_to_sign_up_page = document.getElementById("to_go_to_log_in_page")
+
+// let dailog_box = document.getElementById("deposit_page")
+// dailog_box.style.display = "none"
+
 
 
 // -----------------------------------------------------------------------------------------login and signup pages--------------------------------------------------------------------
@@ -49,6 +57,7 @@ login.addEventListener("click", () => {
     home_page_content.style.display = "none"
     home_page_content_2.style.display = "none"
     signup_page.style.display = "none"
+    page_3.style.display = "none"
     login_page.style.display = "flex"
     home_page.appendChild(login_page)
 
@@ -60,18 +69,50 @@ signup.addEventListener("click", () => {
     home_page_content.style.display = "none"
     home_page_content_2.style.display = "none"
     login_page.style.display = "none"
+    page_3.style.display = "none"
     signup_page.style.display = "flex"
     home_page.appendChild(signup_page)
 
 
 })
 
-home_button.addEventListener("click", () => {
 
-    location.reload();
+button_to_signup_page_from_login_page.addEventListener("click", () => {
+
+
+    home_page_content.style.display = "none"
+    home_page_content_2.style.display = "none"
+    login_page.style.display = "none"
+    page_3.style.display = "none"
+    signup_page.style.display = "flex"
+    home_page.appendChild(signup_page)
+
+
 })
 
+button_to_log_in_page_to_sign_up_page.addEventListener("click", () => {
+
+    home_page_content.style.display = "none"
+    home_page_content_2.style.display = "none"
+    signup_page.style.display = "none"
+    page_3.style.display = "none"
+    login_page.style.display = "flex"
+    home_page.appendChild(login_page)
+
+})
+
+
+// home_button.addEventListener("click", () => {
+
+//     location.reload();
+// })
+
 // -----------------------------------------------------------------services of the bank---------------------------------------------------------------------------------------------------------------
+
+// document.getElementById("account_number").style.display = "none"
+// document.getElementById("account_balance").style.display = "none"
+// document.getElementById("ifsc_code").style.display = "none"
+
 
 deposit_button.addEventListener("click", () => {
 
@@ -115,10 +156,10 @@ account_details_button.addEventListener("click", () => {
     deposit_button_div.style.display = "none"
     account_info.style.display = "flex"
     ifsc_of_holder.style.display = "flex"
+    document.getElementById("account_number").style.display = "flex"
+    document.getElementById("account_balance").style.display = "flex"
     font_to_be_changed_while_changing_window.innerText = "Account Details"
-    account_number_of_holder.innerText = "the account number will be displayed here"
-    balance_of_holder.innerText = "the account balance will be displayed here"
-    ifsc_of_holder.innerText = "the ifsc number will be displayed here"
+
 
     deposit_page.appendChild(account_info)
 
@@ -131,10 +172,11 @@ balance_details_button.addEventListener("click", () => {
     deposit_account_details.style.display = "none"
     deposit_button_div.style.display = "none"
     account_info.style.display = "flex"
-    font_to_be_changed_while_changing_window.innerText = "Balance of the Account"
-    account_number_of_holder.innerText = "the account number will be displayed here"
-    balance_of_holder.innerText = "the account balance will be displayed here"
+    document.getElementById("account_number").style.display = "flex"
+    document.getElementById("account_balance").style.display = "flex"
     ifsc_of_holder.style.display = "none"
+    font_to_be_changed_while_changing_window.innerText = "Balance of the Account"
+
 
 
     deposit_page.appendChild(account_info)
@@ -142,7 +184,6 @@ balance_details_button.addEventListener("click", () => {
 
 // -------------------------------------------------------signup -----------------------------------------------------------------------------------------------------------------------
 
-let userget = JSON.parse(localStorage.getItem("account_details"))
 
 let signup_page_first_name = document.getElementById("first_name_in_sign_up_page")
 
@@ -160,13 +201,25 @@ let signup_successful_message = document.getElementById("message_for_signup_page
 
 let signup_heading = document.getElementById("login_heading")
 
+let page_3 = document.getElementById("main_page3")
+
+let footer = document.getElementById("footer")
+
 console.log(signup_heading)
 
 function add_new_user() {
 
+    page_3.style.display = "none"
+
+    footer.style.display = "none"
+
     let userget = JSON.parse(localStorage.getItem("account_details"))
 
     let generated_Account_number = Math.floor(Math.random() * 1000000000);
+
+    let generated_ifsc_number = Math.floor(Math.random() * 10000);
+
+    let balance_of_account_at_start = 0
 
     users = {
 
@@ -175,7 +228,8 @@ function add_new_user() {
         email: signup_page_email.value,
         password: signup_page_password.value,
         account_number: generated_Account_number,
-        // balance
+        ifsc_code: generated_ifsc_number,
+        balance: balance_of_account_at_start
     }
 
     if (signup_page_first_name.value == "" || signup_page_second_name.value == "" || signup_page_password.value == "" || signup_page_email.value == "") {
@@ -199,7 +253,7 @@ function add_new_user() {
 
             signup_heading.style.fontSize = "163%"
 
-            signup_heading.innerHTML = "Signup Successful with account number:" + users.account_number
+            signup_heading.innerHTML = "Signup Successful with account number :" + users.account_number
 
             signup_successful_message.innerText = "Your account has been created successfully!!"
 
@@ -267,6 +321,135 @@ signup_button_for_creating_account.addEventListener("click", add_new_user)
 
 
 // -----------------------------------------------------------login in--------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+let email_for_login = document.getElementById("email_for_login")
+
+let password_for_login = document.getElementById("password_for_log_in")
+
+let button_to_log_in = document.getElementById("login_to_account_button")
+
+let changing_log_in_box_part = document.getElementById("log_in_box_to_be_change")
+
+let changing_log_in_heading = document.getElementById("login_heading_login_page")
+
+let information_about_the_logged_account = document.getElementById("login_account_details_page")
+
+let log_in_area_after_loggining_in = document.getElementById("login_area")
+
+// let account_number_to_be_displayed = document.getElementById("account_number")
+
+
+
+
+
+
+
+function loggin_in() {
+
+    page_3.style.display = "none"
+
+    footer.style.display = "none"
+
+    let user_found = false
+
+    if (email_for_login.value != "" || password_for_login.value != "") {
+
+        for (let j = 0; j < userget.length; j++) {
+
+            if (email_for_login.value == userget[j].email && password_for_login.value == userget[j].password) {
+
+                changing_log_in_box_part.style.display = "none"
+
+                changing_log_in_heading.innerText = "Login Sucessful"
+
+                signup.style.display = "none"
+
+                login.style.display = "none"
+
+                changing_log_in_heading.style.height = "85%"
+
+                information_about_the_logged_account.classList.remove("messages_of_login")
+
+                information_about_the_logged_account.style.color = "#ffffff"
+
+                information_about_the_logged_account.classList.add("signupmessage")
+
+                information_about_the_logged_account.innerHTML = "ACCOUNT NUMBER" + " : " + userget[j].account_number + "<br>" + " FIRST NAME" + " : " + userget[j].first_name + " <br>" + "BALANCE" + " : " + userget[j].balance + " <br> " + "Ifsc code" + " : " + userget[j].ifsc_code
+
+                log_in_area_after_loggining_in.id = "login_area_after_logging_in"
+
+                account_number_of_holder.innerHTML = "Account number" + " : " + userget[j].account_number
+
+                balance_of_holder.innerText = "Balance" + " : " + userget[j].balance
+
+                ifsc_of_holder.innerText = "Ifsc code" + " : " + userget[j].ifsc_code
+
+                user_found = true
+
+
+                break
+
+            }
+        }
+
+        if (user_found == true) {
+
+            home_button.addEventListener("click", () => {
+
+                log_in_area_after_loggining_in.style.display = "none"
+               
+                home_page_content.style.display = "flex"
+                
+                home_page_content_2.style.display = "flex"
+                
+                home_page_content_2.style.flexDirection = "column"
+                
+                page_3.style.display = "flex"
+                
+                footer.style.display = "flex"
+                
+                signup.style.display = "none"
+                
+                login.style.display ="none"
+                
+                let log_out_button = document.createElement("button")
+                
+                log_out_button.classList.add("registering")
+               
+                log_out_button.id = "log_out_button"
+                
+                log_out_button.innerText ="LOG OUT"
+                
+                document.getElementById("authentication").appendChild(log_out_button)
+                // console.log(document.getElementById("account_number"))
+            })
+        }
+
+        if (!user_found) {
+
+            changing_log_in_box_part.style.display = "none"
+
+            changing_log_in_heading.innerText = "Login Unsucessful"
+
+
+
+        }
+    }
+
+    else {
+
+        alert("KINDLY ENTER YOUR DETAILS !!!!")
+    }
+}
+
+
+button_to_log_in.addEventListener("click", loggin_in)
+
+
 
 
 
