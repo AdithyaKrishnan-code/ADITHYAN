@@ -18,6 +18,8 @@ let deposit_confirmation_button = document.getElementById("confirmation_of_depos
 let deposit_account_details = document.getElementById("depositing_account_details")
 let deposit_button_div = document.getElementById("deposit_button")
 
+let account_number_for_fund_transfer = document.getElementById("account_number_for_transactions")
+
 
 let font_to_be_changed_while_changing_window = document.getElementById("deposit_heading")
 let placeholder_to_be_changed = document.getElementById("deposit_amount_input_field")
@@ -39,9 +41,7 @@ let userget = JSON.parse(localStorage.getItem("account_details"))
 let button_to_signup_page_from_login_page = document.getElementById("to_go_to_signup_page")
 let button_to_log_in_page_to_sign_up_page = document.getElementById("to_go_to_log_in_page")
 
-// let dailog_box = document.getElementById("deposit_page")
-// dailog_box.style.display = "none"
-
+let deposit_succesful_message = document.createElement("div")
 
 
 // -----------------------------------------------------------------------------------------login and signup pages--------------------------------------------------------------------
@@ -109,10 +109,6 @@ button_to_log_in_page_to_sign_up_page.addEventListener("click", () => {
 
 // -----------------------------------------------------------------services of the bank---------------------------------------------------------------------------------------------------------------
 
-// document.getElementById("account_number").style.display = "none"
-// document.getElementById("account_balance").style.display = "none"
-// document.getElementById("ifsc_code").style.display = "none"
-
 
 deposit_button.addEventListener("click", () => {
 
@@ -124,6 +120,10 @@ deposit_button.addEventListener("click", () => {
     placeholder_to_be_changed.placeholder = "Enter your deposit amount.."
     deposit_button_div.style.display = "flex"
     account_info.style.display = "none"
+    password_for_fund_transfer.style.display = "flex"
+    account_number_for_fund_transfer.style.display = "flex"
+    placeholder_to_be_changed.style.display = "flex"
+    deposit_succesful_message.style.display = "none"
     console.log("hello_wworld")
 })
 
@@ -219,8 +219,6 @@ function add_new_user() {
 
     let generated_ifsc_number = Math.floor(Math.random() * 10000);
 
-    let balance_of_account_at_start = 0
-
     users = {
 
         first_name: signup_page_first_name.value,
@@ -229,7 +227,7 @@ function add_new_user() {
         password: signup_page_password.value,
         account_number: generated_Account_number,
         ifsc_code: generated_ifsc_number,
-        balance: balance_of_account_at_start
+        balance: 0
     }
 
     if (signup_page_first_name.value == "" || signup_page_second_name.value == "" || signup_page_password.value == "" || signup_page_email.value == "") {
@@ -306,8 +304,6 @@ function add_new_user() {
 
                 signup_successful_message.innerText = "Your account has been created successfully!! "
 
-                // alert("signup succesful")
-
 
             }
 
@@ -340,14 +336,6 @@ let information_about_the_logged_account = document.getElementById("login_accoun
 
 let log_in_area_after_loggining_in = document.getElementById("login_area")
 
-// let account_number_to_be_displayed = document.getElementById("account_number")
-
-
-
-
-
-
-
 function loggin_in() {
 
     page_3.style.display = "none"
@@ -361,6 +349,8 @@ function loggin_in() {
         for (let j = 0; j < userget.length; j++) {
 
             if (email_for_login.value == userget[j].email && password_for_login.value == userget[j].password) {
+
+                account_number_for_fund_transfer.style.display = "flex"
 
                 changing_log_in_box_part.style.display = "none"
 
@@ -388,6 +378,10 @@ function loggin_in() {
 
                 ifsc_of_holder.innerText = "Ifsc code" + " : " + userget[j].ifsc_code
 
+                account_number_for_fund_transfer.defaultValue = userget[j].account_number
+
+
+
                 user_found = true
 
 
@@ -401,31 +395,71 @@ function loggin_in() {
             home_button.addEventListener("click", () => {
 
                 log_in_area_after_loggining_in.style.display = "none"
-               
+
                 home_page_content.style.display = "flex"
-                
+
                 home_page_content_2.style.display = "flex"
-                
+
                 home_page_content_2.style.flexDirection = "column"
-                
+
                 page_3.style.display = "flex"
-                
+
                 footer.style.display = "flex"
-                
+
                 signup.style.display = "none"
-                
-                login.style.display ="none"
-                
+
+                login.style.display = "none"
+
                 let log_out_button = document.createElement("button")
-                
+
                 log_out_button.classList.add("registering")
-               
+
                 log_out_button.id = "log_out_button"
-                
-                log_out_button.innerText ="LOG OUT"
-                
+
+                log_out_button.innerText = "LOG OUT"
+
                 document.getElementById("authentication").appendChild(log_out_button)
-                // console.log(document.getElementById("account_number"))
+
+                deposit_confirmation_button.addEventListener("click", () => {
+
+                    console.log("pressed")
+
+                    let checker = false
+
+                    for (let k = 0; k < userget.length; k++) {
+
+                        if (account_number_for_fund_transfer.value == userget[k].account_number && password_for_fund_transfer.value == userget[k].password) {
+
+                            console.log(userget[k].balance)
+
+                            userget[k].balance += Number(placeholder_to_be_changed.value)
+
+                            console.log(userget[k].balance)
+
+                            localStorage.setItem("account_details", JSON.stringify(userget))
+
+                            balance_of_holder.innerText = "Balance" + " : " + userget[k].balance
+
+                            checker = true
+
+                        }
+
+                        else {
+
+                            alert("INCORRECT CREDENTIALS")
+                        }
+
+                    }
+
+                    if (checker = true) {
+
+                        placeholder_to_be_changed.value = ""
+
+                        password_for_fund_transfer.value = ""
+
+                    }
+                })
+
             })
         }
 
@@ -434,8 +468,6 @@ function loggin_in() {
             changing_log_in_box_part.style.display = "none"
 
             changing_log_in_heading.innerText = "Login Unsucessful"
-
-
 
         }
     }
@@ -450,7 +482,94 @@ function loggin_in() {
 button_to_log_in.addEventListener("click", loggin_in)
 
 
+// -------------------------------------------------------------------deposit-------------------------------------------------------------------------------------------------------
 
+
+
+
+let password_for_fund_transfer = document.getElementById("password_for_transactions")
+
+let clear_button = false
+
+deposit_confirmation_button.addEventListener("click", () => {
+
+    password_for_fund_transfer.style.display = "flex"
+
+    account_number_for_fund_transfer.style.display = "flex"
+
+    placeholder_to_be_changed.style.display = "flex"
+
+    console.log("pressed")
+
+    for (let k = 0; k < userget.length; k++) {
+
+        if (account_number_for_fund_transfer.value == userget[k].account_number && password_for_fund_transfer.value == userget[k].password) {
+
+            console.log(userget[k].balance)
+
+            userget[k].balance += Number(placeholder_to_be_changed.value)
+
+            console.log(userget[k].balance)
+
+            localStorage.setItem("account_details", JSON.stringify(userget))
+
+            alert("deposit successful")
+
+            password_for_fund_transfer.style.display = "none"
+
+            account_number_for_fund_transfer.style.display = "none"
+
+            placeholder_to_be_changed.style.display = "none"
+
+            deposit_button_div.style.display = "none"
+
+            deposit_succesful_message.classList.add("deposit_message_success")
+
+            deposit_succesful_message.innerText = "Deposit Sucessfull"
+
+            deposit_account_details.appendChild(deposit_succesful_message)
+
+            deposit_succesful_message.style.display = "flex"
+
+            placeholder_to_be_changed.value = ""
+
+            password_for_fund_transfer.value = ""
+
+            account_number_for_fund_transfer.value = ""
+
+            break
+
+        }
+
+        else {
+
+            password_for_fund_transfer.style.display = "none"
+
+            account_number_for_fund_transfer.style.display = "none"
+
+            placeholder_to_be_changed.style.display = "none"
+
+            deposit_button_div.style.display = "none"
+
+            deposit_succesful_message.classList.add("deposit_message_success")
+
+            deposit_succesful_message.innerText = "Deposit Unsucessfull Check Credentials"
+
+            deposit_account_details.appendChild(deposit_succesful_message)
+
+            deposit_succesful_message.style.display = "flex"
+
+            placeholder_to_be_changed.value = ""
+
+            password_for_fund_transfer.value = ""
+
+            account_number_of_holder.value = ""
+        }
+
+    }
+
+
+})
 
 
 
