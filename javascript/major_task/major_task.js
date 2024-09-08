@@ -419,7 +419,6 @@ function loggin_in() {
 
                     location.reload()
 
-                    // alert("LOG OUT SUCESSFUL")
 
                 })
 
@@ -537,8 +536,6 @@ deposit_confirmation_button.addEventListener("click", () => {
             console.log("after depositting",userget[k].balance)
             
             localStorage.setItem("account_details", JSON.stringify(userget))
-            
-            // balance_of_holder.innerText = "Balance" + " : " + userget[k].balance
 
             password_for_fund_transfer.style.display = "none"
 
@@ -587,9 +584,6 @@ deposit_confirmation_button.addEventListener("click", () => {
 
     if (clear_button = true) {
 
-        // account_number_for_fund_transfer.value = ""
-
-        // account_number_for_fund_transfer.defaultValue = " "
 
         password_for_fund_transfer.value = ""
 
@@ -598,8 +592,6 @@ deposit_confirmation_button.addEventListener("click", () => {
     }
 
     else if (!clear_button) {
-
-        // account_number_for_fund_transfer.value = ""
 
         password_for_fund_transfer.value = ""
 
@@ -630,8 +622,6 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
     amount_for_withdrawal.style.display = "flex"
 
-    // withdraw_page.style.display = "none"
-
     console.log("pressed")
 
     for (let k = 0; k < userget.length; k++) {
@@ -649,8 +639,6 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
                 localStorage.setItem("account_details", JSON.stringify(userget))
 
-                // alert("withdraw successful")
-
                 password_for_withdraw.style.display = "none"
 
                 account_number_for_withdrawal.style.display = "none"
@@ -665,15 +653,13 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
                 withdraw_page.appendChild(withdraw_succesful_message)
 
-                // withdraw_succesful_message.style.display = "flex"
-
                 clear_button_withdraw = true
 
                 break
 
 
             }
-            else if(userget[k].balance >= amount_for_withdrawal.value) {
+            else {
 
                 console.log("no enough balance")
 
@@ -692,6 +678,8 @@ withdraw_confirmation_button.addEventListener("click", () => {
                 withdraw_page.appendChild(withdraw_succesful_message)
 
                 withdraw_succesful_message.style.display = "flex"
+                
+                clear_button_withdraw = true
             }
 
 
@@ -723,9 +711,6 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
     if (clear_button_withdraw = true) {
 
-        // account_number_for_fund_transfer.value = ""
-
-        // account_number_for_fund_transfer.defaultValue = " "
 
         password_for_withdraw.value = ""
 
@@ -735,8 +720,6 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
     else if (!clear_button_withdraw) {
 
-        // account_number_for_fund_transfer.value = ""
-
         password_for_withdraw.value = ""
 
         amount_for_withdrawal.value = ""
@@ -745,3 +728,10 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
 
 })
+
+// ----------------------------------------------login refresh situation--------------------------------------------------------------------------------------------------------------------------------------
+
+for(let j=0;j<userget.length;j++){
+
+    console.log("login statuts of account",userget.log_status)
+}
