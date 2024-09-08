@@ -1445,7 +1445,7 @@ body {
 
 .page_3::backdrop {
   
-    background-color: #0a0a0a;
+    background-color: #0a0a0a; 
     opacity: 0.6;
 
 }

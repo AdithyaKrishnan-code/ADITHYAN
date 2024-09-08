@@ -57,6 +57,8 @@ let withdraw_succesful_message = document.createElement("div")
 
 let_log_out_button = document.getElementById("log_out_button")
 
+
+
 // -----------------------------------------------------------------------------------------login and signup pages--------------------------------------------------------------------
 
 login_page.style.display = "none"
@@ -113,12 +115,6 @@ button_to_log_in_page_to_sign_up_page.addEventListener("click", () => {
     home_page.appendChild(login_page)
 
 })
-
-
-// home_button.addEventListener("click", () => {
-
-//     location.reload();
-// })
 
 // -----------------------------------------------------------------services of the bank---------------------------------------------------------------------------------------------------------------
 
@@ -229,8 +225,6 @@ let page_3 = document.getElementById("main_page3")
 
 let footer = document.getElementById("footer")
 
-console.log(signup_heading)
-
 function add_new_user() {
 
     page_3.style.display = "none"
@@ -280,8 +274,6 @@ function add_new_user() {
 
             signup_successful_message.innerText = "Your account has been created successfully!!"
 
-            // alert("signup succesful")
-
 
         }
 
@@ -296,18 +288,13 @@ function add_new_user() {
 
                     emailexists = true
 
-                    // alert("not possible")
-
                     signup_details_area.style.display = "none"
 
                     signup_heading.innerHTML = "Signup Unsuccessful"
 
                     signup_successful_message.innerText = "E-Mail has been already registerd"
 
-
-
                     break
-
 
                 }
 
@@ -344,9 +331,6 @@ signup_button_for_creating_account.addEventListener("click", add_new_user)
 // -----------------------------------------------------------login in--------------------------------------------------------------------------------------------------------------------
 
 
-
-
-
 let email_for_login = document.getElementById("email_for_login")
 
 let password_for_login = document.getElementById("password_for_log_in")
@@ -375,13 +359,23 @@ function loggin_in() {
 
             if (email_for_login.value == userget[j].email && password_for_login.value == userget[j].password) {
 
-                console.log(userget[j].log_status)
+                // ----------------------------------------------login refresh situation--------------------------------------------------------------------------------------------------------------------------------------
+
+
+                // if (userget[j].log_status == 1) {
+
+
+                //     home_page.style.backgroundColor = "white"
+
+
+                // }
+
+                // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
                 userget[j].log_status = Number(1)
 
                 localStorage.setItem("account_details", JSON.stringify(userget))
-
-                console.log(userget[j].log_status)
 
                 let log_out_button = document.createElement("button")
 
@@ -392,22 +386,18 @@ function loggin_in() {
                 log_out_button.innerText = "LOG OUT"
 
                 document.getElementById("authentication").appendChild(log_out_button)
-// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                deposit_confirmation_button.addEventListener("click",()=>{
-
-                    console.log("balance inside login page for updation",userget[j].balance)
+                // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                deposit_confirmation_button.addEventListener("click", () => {
 
                     balance_of_holder.innerText = userget[j].balance
 
                 })
-                withdraw_confirmation_button.addEventListener("click",()=>{
-
-                    console.log("balance inside login page for updation",userget[j].balance)
+                withdraw_confirmation_button.addEventListener("click", () => {
 
                     balance_of_holder.innerText = userget[j].balance
 
                 })
-// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 log_out_button.addEventListener("click", () => {
 
@@ -529,12 +519,12 @@ deposit_confirmation_button.addEventListener("click", () => {
 
         if (account_number_for_fund_transfer.value == userget[k].account_number && password_for_fund_transfer.value == userget[k].password) {
 
-            console.log("before depositting",userget[k].balance)
+            console.log("before depositting", userget[k].balance)
 
             userget[k].balance += Number(placeholder_to_be_changed.value)
-            
-            console.log("after depositting",userget[k].balance)
-            
+
+            console.log("after depositting", userget[k].balance)
+
             localStorage.setItem("account_details", JSON.stringify(userget))
 
             password_for_fund_transfer.style.display = "none"
@@ -629,13 +619,13 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
         if (account_number_for_withdrawal.value == userget[k].account_number && password_for_withdraw.value == userget[k].password) {
 
-            console.log("before withdrawal",userget[k].balance)
+            console.log("before withdrawal", userget[k].balance)
 
             if (userget[k].balance >= amount_for_withdrawal.value) {
 
                 userget[k].balance -= Number(amount_for_withdrawal.value)
 
-                console.log("after withdrawal",userget[k].balance)
+                console.log("after withdrawal", userget[k].balance)
 
                 localStorage.setItem("account_details", JSON.stringify(userget))
 
@@ -678,7 +668,7 @@ withdraw_confirmation_button.addEventListener("click", () => {
                 withdraw_page.appendChild(withdraw_succesful_message)
 
                 withdraw_succesful_message.style.display = "flex"
-                
+
                 clear_button_withdraw = true
             }
 
@@ -686,7 +676,7 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
         }
 
-        if(account_number_for_withdrawal.value != userget[k].account_number && password_for_withdraw.value != userget[k].password) {
+        if (account_number_for_withdrawal.value != userget[k].account_number && password_for_withdraw.value != userget[k].password) {
 
             password_for_withdraw.style.display = "none"
 
@@ -729,9 +719,3 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
 })
 
-// ----------------------------------------------login refresh situation--------------------------------------------------------------------------------------------------------------------------------------
-
-for(let j=0;j<userget.length;j++){
-
-    console.log("login statuts of account",userget.log_status)
-}
