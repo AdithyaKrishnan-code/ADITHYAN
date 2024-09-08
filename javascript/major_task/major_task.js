@@ -7,6 +7,7 @@ let home_button = document.getElementById("home_button")
 
 let login = document.getElementById("log_in_button")
 let login_page = document.getElementById("login_page")
+let log_in_page_sub_text = document.getElementById("sub_text_for_login")
 
 let signup = document.getElementById("signup_button")
 let signup_page = document.getElementById("signup_page")
@@ -606,6 +607,8 @@ function loggin_in() {
             changing_log_in_box_part.style.display = "none"
 
             changing_log_in_heading.innerText = "Login Unsucessful"
+
+            log_in_page_sub_text.innerText = "Check your credentials"
 
         }
     }
