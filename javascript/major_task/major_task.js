@@ -392,6 +392,22 @@ function loggin_in() {
                 log_out_button.innerText = "LOG OUT"
 
                 document.getElementById("authentication").appendChild(log_out_button)
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                deposit_confirmation_button.addEventListener("click",()=>{
+
+                    console.log("balance inside login page for updation",userget[j].balance)
+
+                    balance_of_holder.innerText = userget[j].balance
+
+                })
+                withdraw_confirmation_button.addEventListener("click",()=>{
+
+                    console.log("balance inside login page for updation",userget[j].balance)
+
+                    balance_of_holder.innerText = userget[j].balance
+
+                })
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 log_out_button.addEventListener("click", () => {
 
@@ -469,136 +485,6 @@ function loggin_in() {
 
                 login.style.display = "none"
 
-
-                deposit_confirmation_button.addEventListener("click", () => {
-
-                    console.log("pressed")
-
-                    let checker = false
-
-                    for (let k = 0; k < userget.length; k++) {
-
-                        if (account_number_for_fund_transfer.value == userget[k].account_number && password_for_fund_transfer.value == userget[k].password) {
-
-                            console.log(userget[k].balance)
-
-                            userget[k].balance += Number(placeholder_to_be_changed.value)
-
-                            console.log(userget[k].balance)
-
-                            localStorage.setItem("account_details", JSON.stringify(userget))
-
-                            balance_of_holder.innerText = "Balance" + " : " + userget[k].balance
-
-                            checker = true
-
-                            break
-
-                        }
-
-                        if (checker = true) {
-
-                            placeholder_to_be_changed.value = ""
-
-                            password_for_fund_transfer.value = ""
-
-                            balance_of_holder.innerText = "Balance" + " : " + userget[k].balance
-
-                        }
-
-                        else if (!checker) {
-
-                            password_for_fund_transfer.style.display = "none"
-
-                            account_number_for_fund_transfer.style.display = "none"
-
-                            placeholder_to_be_changed.style.display = "none"
-
-                            deposit_button_div.style.display = "none"
-
-                            deposit_succesful_message.classList.add("deposit_message_success")
-
-                            deposit_succesful_message.innerText = "Deposit Unsucessful Check Credentials"
-
-                            deposit_account_details.appendChild(deposit_succesful_message)
-
-                            deposit_succesful_message.style.display = "flex"
-
-                        }
-
-
-                    }
-
-
-
-
-                })
-                // -------------------------------------------------------------------------------------------------------------------------
-
-                withdraw_confirmation_button.addEventListener("click", () => {
-
-                    console.log("pressed")
-
-                    let checker = false
-
-                    for (let k = 0; k < userget.length; k++) {
-
-                        if (account_number_for_fund_transfer.value == userget[k].account_number && password_for_fund_transfer.value == userget[k].password) {
-
-                            console.log(userget[k].balance)
-
-                            userget[k].balance -= Number(amount_for_withdrawal.value)
-
-                            console.log(userget[k].balance)
-
-                            localStorage.setItem("account_details", JSON.stringify(userget))
-
-                            balance_of_holder.innerText = "Balance" + " : " + userget[k].balance
-
-                            checker = true
-
-                            break
-
-                        }
-
-                        if (checker = true) {
-
-                            amount_for_withdrawal.value = ""
-
-                            password_for_withdraw.value = ""
-
-                            balance_of_holder.innerText = "Balance" + " : " + userget[k].balance
-
-                        }
-
-                        else if (!checker) {
-
-                            password_for_withdraw.style.display = "none"
-
-                            account_number_for_withdrawal.style.display = "none"
-
-                            amount_for_withdrawal.style.display = "none"
-
-                            withdraw_button_div.style.display = "none"
-
-                            withdraw_succesful_message.classList.add("deposit_message_success")
-
-                            withdraw_succesful_message.innerText = "Withdraw Unsucessful Check Credentials"
-
-                            withdraw_page.appendChild(withdraw_succesful_message)
-
-                            withdraw_succesful_message.style.display = "flex"
-
-                        }
-
-
-                    }
-
-
-
-
-                })
-
             })
         }
 
@@ -644,15 +530,15 @@ deposit_confirmation_button.addEventListener("click", () => {
 
         if (account_number_for_fund_transfer.value == userget[k].account_number && password_for_fund_transfer.value == userget[k].password) {
 
-            console.log(userget[k].balance)
+            console.log("before depositting",userget[k].balance)
 
             userget[k].balance += Number(placeholder_to_be_changed.value)
-
-            console.log(userget[k].balance)
-
+            
+            console.log("after depositting",userget[k].balance)
+            
             localStorage.setItem("account_details", JSON.stringify(userget))
-
-            // alert("deposit successful")
+            
+            // balance_of_holder.innerText = "Balance" + " : " + userget[k].balance
 
             password_for_fund_transfer.style.display = "none"
 
@@ -753,13 +639,13 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
         if (account_number_for_withdrawal.value == userget[k].account_number && password_for_withdraw.value == userget[k].password) {
 
-            console.log(userget[k].balance)
+            console.log("before withdrawal",userget[k].balance)
 
             if (userget[k].balance >= amount_for_withdrawal.value) {
 
                 userget[k].balance -= Number(amount_for_withdrawal.value)
 
-                console.log(userget[k].balance)
+                console.log("after withdrawal",userget[k].balance)
 
                 localStorage.setItem("account_details", JSON.stringify(userget))
 
@@ -787,8 +673,9 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
 
             }
+            else if(userget[k].balance >= amount_for_withdrawal.value) {
 
-            else {
+                console.log("no enough balance")
 
                 password_for_withdraw.style.display = "none"
 
@@ -811,7 +698,7 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
         }
 
-        else {
+        if(account_number_for_withdrawal.value != userget[k].account_number && password_for_withdraw.value != userget[k].password) {
 
             password_for_withdraw.style.display = "none"
 
@@ -823,7 +710,7 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
             withdraw_succesful_message.classList.add("deposit_message_success")
 
-            withdraw_succesful_message.innerText = "Withdraw Unsucessfull Check Credentials"
+            withdraw_succesful_message.innerText = "Withdraw Unsucessful Check Credentials"
 
             withdraw_page.appendChild(withdraw_succesful_message)
 
@@ -858,6 +745,3 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
 
 })
-
-
-
