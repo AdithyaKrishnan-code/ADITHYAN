@@ -18,6 +18,15 @@ let deposit_confirmation_button = document.getElementById("confirmation_of_depos
 let deposit_account_details = document.getElementById("depositing_account_details")
 let deposit_button_div = document.getElementById("deposit_button")
 
+let withdraw_page = document.getElementById("withdraw_account_details")
+let withdraw_button_div = document.getElementById("withdraw_button_style")
+let withdraw_button = document.getElementById("symbol_icon_withdraw")
+let withdraw_confirmation_button = document.getElementById("confirmation_of_withdraw")
+let password_for_withdraw = document.getElementById("password_for_withdraw")
+let account_number_for_withdrawal = document.getElementById("account_number_for_withdraw")
+let amount_for_withdrawal = document.getElementById("withdraw_amount_input_field")
+
+
 let account_number_for_fund_transfer = document.getElementById("account_number_for_transactions")
 
 
@@ -25,7 +34,7 @@ let font_to_be_changed_while_changing_window = document.getElementById("deposit_
 let placeholder_to_be_changed = document.getElementById("deposit_amount_input_field")
 
 
-let withdraw_button = document.getElementById("symbol_icon_withdraw")
+
 
 let account_details_button = document.getElementById("symbol_icon_account_details")
 let account_info = document.getElementById("account_details")
@@ -42,7 +51,10 @@ let button_to_signup_page_from_login_page = document.getElementById("to_go_to_si
 let button_to_log_in_page_to_sign_up_page = document.getElementById("to_go_to_log_in_page")
 
 let deposit_succesful_message = document.createElement("div")
+let withdraw_succesful_message = document.createElement("div")
 
+
+let_log_out_button = document.getElementById("log_out_button")
 
 // -----------------------------------------------------------------------------------------login and signup pages--------------------------------------------------------------------
 
@@ -124,6 +136,11 @@ deposit_button.addEventListener("click", () => {
     account_number_for_fund_transfer.style.display = "flex"
     placeholder_to_be_changed.style.display = "flex"
     deposit_succesful_message.style.display = "none"
+    deposit_button_div.style.display = "flex"
+    withdraw_page.style.display = "none"
+    withdraw_button_div.style.display = "none"
+
+
     console.log("hello_wworld")
 })
 
@@ -139,12 +156,17 @@ withdraw_button.addEventListener("click", () => {
 
 
     deposit_page.showModal()
-    deposit_account_details.style.display = "flex"
     font_to_be_changed_while_changing_window.innerText = "Withdraw"
-    deposit_confirmation_button.innerText = "Withdraw"
-    placeholder_to_be_changed.placeholder = "Enter your withdraw amount.."
-    deposit_button_div.style.display = "flex"
+    deposit_account_details.style.display = "none"
+    withdraw_page.style.display = "flex"
+    withdraw_page.style.flexDirection = "column"
     account_info.style.display = "none"
+    deposit_button_div.style.display = "none"
+    withdraw_button_div.style.display = "flex"
+    password_for_withdraw.style.display = "flex"
+    account_number_for_withdrawal.style.display = "flex"
+    amount_for_withdrawal.style.display = "flex"
+    withdraw_page.removeChild(withdraw_succesful_message)
     console.log("hello_wworld")
 
 })
@@ -159,7 +181,8 @@ account_details_button.addEventListener("click", () => {
     document.getElementById("account_number").style.display = "flex"
     document.getElementById("account_balance").style.display = "flex"
     font_to_be_changed_while_changing_window.innerText = "Account Details"
-
+    withdraw_page.style.display = "none"
+    withdraw_button_div.style.display = "none"
 
     deposit_page.appendChild(account_info)
 
@@ -176,8 +199,8 @@ balance_details_button.addEventListener("click", () => {
     document.getElementById("account_balance").style.display = "flex"
     ifsc_of_holder.style.display = "none"
     font_to_be_changed_while_changing_window.innerText = "Balance of the Account"
-
-
+    withdraw_page.style.display = "none"
+    withdraw_button_div.style.display = "none"
 
     deposit_page.appendChild(account_info)
 })
@@ -227,7 +250,8 @@ function add_new_user() {
         password: signup_page_password.value,
         account_number: generated_Account_number,
         ifsc_code: generated_ifsc_number,
-        balance: 0
+        balance: 0,
+        log_status: 0
     }
 
     if (signup_page_first_name.value == "" || signup_page_second_name.value == "" || signup_page_password.value == "" || signup_page_email.value == "") {
@@ -350,6 +374,40 @@ function loggin_in() {
 
             if (email_for_login.value == userget[j].email && password_for_login.value == userget[j].password) {
 
+                console.log(userget[j].log_status)
+
+                userget[j].log_status = Number(1)
+
+                localStorage.setItem("account_details", JSON.stringify(userget))
+
+                console.log(userget[j].log_status)
+
+                let log_out_button = document.createElement("button")
+
+                log_out_button.classList.add("registering")
+
+                log_out_button.id = "log_out_button"
+
+                log_out_button.innerText = "LOG OUT"
+
+                document.getElementById("authentication").appendChild(log_out_button)
+
+                log_out_button.addEventListener("click", () => {
+
+                    userget[j].log_status = Number(0)
+
+                    localStorage.setItem("account_details", JSON.stringify(userget))
+
+                    alert("DO YOU WANT TO LOG OUT")
+
+                    location.reload()
+
+                    // alert("LOG OUT SUCESSFUL")
+
+                })
+
+
+
                 account_number_for_fund_transfer.style.display = "flex"
 
                 changing_log_in_box_part.style.display = "none"
@@ -380,7 +438,7 @@ function loggin_in() {
 
                 account_number_for_fund_transfer.defaultValue = userget[j].account_number
 
-
+                account_number_for_withdrawal.defaultValue = userget[j].account_number
 
                 user_found = true
 
@@ -410,15 +468,6 @@ function loggin_in() {
 
                 login.style.display = "none"
 
-                let log_out_button = document.createElement("button")
-
-                log_out_button.classList.add("registering")
-
-                log_out_button.id = "log_out_button"
-
-                log_out_button.innerText = "LOG OUT"
-
-                document.getElementById("authentication").appendChild(log_out_button)
 
                 deposit_confirmation_button.addEventListener("click", () => {
 
@@ -442,22 +491,111 @@ function loggin_in() {
 
                             checker = true
 
+                            break
+
                         }
 
-                        else {
+                        if (checker = true) {
 
-                            alert("INCORRECT CREDENTIALS")
+                            placeholder_to_be_changed.value = ""
+
+                            password_for_fund_transfer.value = ""
+
+                            balance_of_holder.innerText = "Balance" + " : " + userget[k].balance
+
                         }
+
+                        else if (!checker) {
+
+                            password_for_fund_transfer.style.display = "none"
+
+                            account_number_for_fund_transfer.style.display = "none"
+
+                            placeholder_to_be_changed.style.display = "none"
+
+                            deposit_button_div.style.display = "none"
+
+                            deposit_succesful_message.classList.add("deposit_message_success")
+
+                            deposit_succesful_message.innerText = "Deposit Unsucessful Check Credentials"
+
+                            deposit_account_details.appendChild(deposit_succesful_message)
+
+                            deposit_succesful_message.style.display = "flex"
+
+                        }
+
 
                     }
 
-                    if (checker = true) {
 
-                        placeholder_to_be_changed.value = ""
 
-                        password_for_fund_transfer.value = ""
+
+                })
+                // -------------------------------------------------------------------------------------------------------------------------
+
+                withdraw_confirmation_button.addEventListener("click", () => {
+
+                    console.log("pressed")
+
+                    let checker = false
+
+                    for (let k = 0; k < userget.length; k++) {
+
+                        if (account_number_for_fund_transfer.value == userget[k].account_number && password_for_fund_transfer.value == userget[k].password) {
+
+                            console.log(userget[k].balance)
+
+                            userget[k].balance -= Number(amount_for_withdrawal.value)
+
+                            console.log(userget[k].balance)
+
+                            localStorage.setItem("account_details", JSON.stringify(userget))
+
+                            balance_of_holder.innerText = "Balance" + " : " + userget[k].balance
+
+                            checker = true
+
+                            break
+
+                        }
+
+                        if (checker = true) {
+
+                            amount_for_withdrawal.value = ""
+
+                            password_for_withdraw.value = ""
+
+                            balance_of_holder.innerText = "Balance" + " : " + userget[k].balance
+
+                        }
+
+                        else if (!checker) {
+
+                            password_for_withdraw.style.display = "none"
+
+                            account_number_for_withdrawal.style.display = "none"
+
+                            amount_for_withdrawal.style.display = "none"
+
+                            withdraw_button_div.style.display = "none"
+
+                            withdraw_succesful_message.classList.add("deposit_message_success")
+
+                            withdraw_succesful_message.innerText = "Withdraw Unsucessful Check Credentials"
+
+                            withdraw_page.appendChild(withdraw_succesful_message)
+
+                            withdraw_succesful_message.style.display = "flex"
+
+                        }
+
 
                     }
+
+
+
+
                 })
 
             })
@@ -483,8 +621,6 @@ button_to_log_in.addEventListener("click", loggin_in)
 
 
 // -------------------------------------------------------------------deposit-------------------------------------------------------------------------------------------------------
-
-
 
 
 let password_for_fund_transfer = document.getElementById("password_for_transactions")
@@ -513,7 +649,7 @@ deposit_confirmation_button.addEventListener("click", () => {
 
             localStorage.setItem("account_details", JSON.stringify(userget))
 
-            alert("deposit successful")
+            // alert("deposit successful")
 
             password_for_fund_transfer.style.display = "none"
 
@@ -525,17 +661,13 @@ deposit_confirmation_button.addEventListener("click", () => {
 
             deposit_succesful_message.classList.add("deposit_message_success")
 
-            deposit_succesful_message.innerText = "Deposit Sucessfull"
+            deposit_succesful_message.innerText = "Deposit Sucessful"
 
             deposit_account_details.appendChild(deposit_succesful_message)
 
             deposit_succesful_message.style.display = "flex"
 
-            placeholder_to_be_changed.value = ""
-
-            password_for_fund_transfer.value = ""
-
-            account_number_for_fund_transfer.value = ""
+            clear_button = true
 
             break
 
@@ -553,24 +685,176 @@ deposit_confirmation_button.addEventListener("click", () => {
 
             deposit_succesful_message.classList.add("deposit_message_success")
 
-            deposit_succesful_message.innerText = "Deposit Unsucessfull Check Credentials"
+            deposit_succesful_message.innerText = "Deposit Unsucessful Check Credentials"
 
             deposit_account_details.appendChild(deposit_succesful_message)
 
             deposit_succesful_message.style.display = "flex"
 
-            placeholder_to_be_changed.value = ""
 
-            password_for_fund_transfer.value = ""
-
-            account_number_of_holder.value = ""
         }
+
+    }
+
+    if (clear_button = true) {
+
+        // account_number_for_fund_transfer.value = ""
+
+        // account_number_for_fund_transfer.defaultValue = " "
+
+        password_for_fund_transfer.value = ""
+
+        placeholder_to_be_changed.value = ""
+
+    }
+
+    else if (!clear_button) {
+
+        // account_number_for_fund_transfer.value = ""
+
+        password_for_fund_transfer.value = ""
+
+        placeholder_to_be_changed.value = ""
 
     }
 
 
 })
 
+// -------------------------------------------------------------------------------------withdraw-------------------------------------------------------------------------------------------
+
+let clear_button_withdraw = false
+
+withdraw_confirmation_button.addEventListener("click", () => {
+
+    console.log("minus")
+
+    console.log(account_number_for_withdrawal)
+    console.log(password_for_withdraw)
+    console.log(amount_for_withdrawal)
+
+
+
+    password_for_withdraw.style.display = "flex"
+
+    account_number_for_withdrawal.style.display = "flex"
+
+    amount_for_withdrawal.style.display = "flex"
+
+    // withdraw_page.style.display = "none"
+
+    console.log("pressed")
+
+    for (let k = 0; k < userget.length; k++) {
+
+
+        if (account_number_for_withdrawal.value == userget[k].account_number && password_for_withdraw.value == userget[k].password) {
+
+            console.log(userget[k].balance)
+
+            if (userget[k].balance >= amount_for_withdrawal.value) {
+
+                userget[k].balance -= Number(amount_for_withdrawal.value)
+
+                console.log(userget[k].balance)
+
+                localStorage.setItem("account_details", JSON.stringify(userget))
+
+                // alert("withdraw successful")
+
+                password_for_withdraw.style.display = "none"
+
+                account_number_for_withdrawal.style.display = "none"
+
+                amount_for_withdrawal.style.display = "none"
+
+                withdraw_button_div.style.display = "none"
+
+                withdraw_succesful_message.classList.add("deposit_message_success")
+
+                withdraw_succesful_message.innerText = "withdraw Sucessful"
+
+                withdraw_page.appendChild(withdraw_succesful_message)
+
+                // withdraw_succesful_message.style.display = "flex"
+
+                clear_button_withdraw = true
+
+                break
+
+
+            }
+
+            else {
+
+                password_for_withdraw.style.display = "none"
+
+                account_number_for_withdrawal.style.display = "none"
+
+                amount_for_withdrawal.style.display = "none"
+
+                withdraw_button_div.style.display = "none"
+
+                withdraw_succesful_message.classList.add("deposit_message_success")
+
+                withdraw_succesful_message.innerText = "Withdraw Unsucessful not Enough balance"
+
+                withdraw_page.appendChild(withdraw_succesful_message)
+
+                withdraw_succesful_message.style.display = "flex"
+            }
+
+
+
+        }
+
+        else {
+
+            password_for_withdraw.style.display = "none"
+
+            account_number_for_withdrawal.style.display = "none"
+
+            amount_for_withdrawal.style.display = "none"
+
+            withdraw_button_div.style.display = "none"
+
+            withdraw_succesful_message.classList.add("deposit_message_success")
+
+            withdraw_succesful_message.innerText = "Withdraw Unsucessfull Check Credentials"
+
+            withdraw_page.appendChild(withdraw_succesful_message)
+
+            withdraw_succesful_message.style.display = "flex"
+
+
+        }
+
+    }
+
+    if (clear_button_withdraw = true) {
+
+        // account_number_for_fund_transfer.value = ""
+
+        // account_number_for_fund_transfer.defaultValue = " "
+
+        password_for_withdraw.value = ""
+
+        amount_for_withdrawal.value = ""
+
+    }
+
+    else if (!clear_button_withdraw) {
+
+        // account_number_for_fund_transfer.value = ""
+
+        password_for_withdraw.value = ""
+
+        amount_for_withdrawal.value = ""
+
+    }
+
+
+})
 
 
 

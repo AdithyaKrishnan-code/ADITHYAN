@@ -1630,4 +1630,23 @@ body {
     justify-content: center;
 }
 
+#withdraw_account_details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 64%;
+    border-top: none;
+    border-bottom: none;
+    padding-bottom: 20px;
+}
 
+
+#withdraw_button_style {
+    height: 11%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: none;
+}
