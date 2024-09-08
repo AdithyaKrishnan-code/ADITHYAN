@@ -57,6 +57,10 @@ let withdraw_succesful_message = document.createElement("div")
 
 let_log_out_button = document.getElementById("log_out_button")
 
+let text_to_be_changed_to_username = document.getElementById("change_to_username")
+
+let text_to_be_changed_to_newt_ext = document.getElementById("newtext")
+
 
 
 // -----------------------------------------------------------------------------------------login and signup pages--------------------------------------------------------------------
@@ -357,7 +361,11 @@ function loggin_in() {
 
         for (let j = 0; j < userget.length; j++) {
 
-            if (email_for_login.value == userget[j].email && password_for_login.value == userget[j].password) {
+            if (email_for_login.value == userget[j].email && password_for_login.value == userget[j].password) {  
+
+                text_to_be_changed_to_newt_ext.innerText = "WELCOME"
+
+                text_to_be_changed_to_username.innerText = "   " + userget[j].first_name
 
                 // ----------------------------------------------login refresh situation--------------------------------------------------------------------------------------------------------------------------------------
 
