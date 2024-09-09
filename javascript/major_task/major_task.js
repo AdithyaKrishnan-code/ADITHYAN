@@ -351,9 +351,13 @@ let log_in_area_after_loggining_in = document.getElementById("login_area")
 
 function loggin_in() {
 
+
+    let span_balance = document.createElement("span")
+
     page_3.style.display = "none"
 
     footer.style.display = "none"
+
 
     let user_found = false
 
@@ -361,7 +365,7 @@ function loggin_in() {
 
         for (let j = 0; j < userget.length; j++) {
 
-            if (email_for_login.value == userget[j].email && password_for_login.value == userget[j].password) {  
+            if (email_for_login.value == userget[j].email && password_for_login.value == userget[j].password) {
 
                 text_to_be_changed_to_newt_ext.innerText = "WELCOME"
 
@@ -394,18 +398,33 @@ function loggin_in() {
                 log_out_button.innerText = "LOG OUT"
 
                 document.getElementById("authentication").appendChild(log_out_button)
-                // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
                 deposit_confirmation_button.addEventListener("click", () => {
 
-                    balance_of_holder.innerText = userget[j].balance
+                    span_balance.classList.remove("span_style_for_withdraw")
+
+                    span_balance.classList.add("span_style_for_display")
+
+                    span_balance.innerText = "Rs" + " " + userget[j].balance 
+
+                    balance_of_holder.innerText = "Balance" + " : " + "  "
+
+                    balance_of_holder.appendChild(span_balance)
+
 
                 })
                 withdraw_confirmation_button.addEventListener("click", () => {
 
-                    balance_of_holder.innerText = userget[j].balance
+                    span_balance.classList.add("span_style_for_withdraw")
+
+                    span_balance.innerText = "Rs" + " " + userget[j].balance 
+
+                    balance_of_holder.innerText = "Balance" + " : " + "  "
+
+                    balance_of_holder.appendChild(span_balance)
 
                 })
-                // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 log_out_button.addEventListener("click", () => {
 
@@ -440,15 +459,42 @@ function loggin_in() {
 
                 information_about_the_logged_account.classList.add("signupmessage")
 
-                information_about_the_logged_account.innerHTML = "ACCOUNT NUMBER" + " : " + userget[j].account_number + "<br>" + " FIRST NAME" + " : " + userget[j].first_name + " <br>" + "BALANCE" + " : " + userget[j].balance + " <br> " + "Ifsc code" + " : " + userget[j].ifsc_code
+                information_about_the_logged_account.innerHTML = "ACCOUNT NUMBER" + " : " + userget[j].account_number + "<br>" + " FIRST NAME" + " : " + userget[j].first_name + " <br>" + "BALANCE" + "  " + " Rs " + " : " + userget[j].balance + " <br> " + "Ifsc code" + " : " + userget[j].ifsc_code
 
                 log_in_area_after_loggining_in.id = "login_area_after_logging_in"
 
-                account_number_of_holder.innerHTML = "Account number" + " : " + userget[j].account_number
+                
+                let span_account_number = document.createElement("span")
 
-                balance_of_holder.innerText = "Balance" + " : " + userget[j].balance
+                span_account_number.classList.add("span_style_for_display")
 
-                ifsc_of_holder.innerText = "Ifsc code" + " : " + userget[j].ifsc_code
+                span_account_number.innerText = "  " + userget[j].account_number
+
+                account_number_of_holder.innerHTML = "Account number" + " : " + "   "
+
+                account_number_of_holder.appendChild(span_account_number)
+
+                
+                span_balance.classList.add("span_style_for_display")
+
+                span_balance.innerText = "Rs" + " " + userget[j].balance
+
+                balance_of_holder.innerText = "Balance" + " : " + "  "
+
+                balance_of_holder.appendChild(span_balance)
+
+
+                let span_ifsc_code = document.createElement("span")
+
+                span_ifsc_code.classList.add("span_style_for_display")
+
+                span_ifsc_code.innerText = userget[j].ifsc_code
+
+                ifsc_of_holder.innerText = "Ifsc code" + " : "
+
+                ifsc_of_holder.appendChild(span_ifsc_code)
+
+
 
                 account_number_for_fund_transfer.defaultValue = userget[j].account_number
 
@@ -474,7 +520,7 @@ function loggin_in() {
 
                 home_page_content_2.style.flexDirection = "column"
 
-                page_3.style.display = "flex"
+                page_3.style.display = "none"
 
                 footer.style.display = "flex"
 

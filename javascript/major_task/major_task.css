@@ -1650,3 +1650,18 @@ body {
     justify-content: center;
     border-top: none;
 }
+
+.span_style_for_display{
+
+    color: #CAFF33;
+
+    padding-left: 7px;
+
+}
+.span_style_for_withdraw{
+
+    color: #f55221;
+
+    padding-left: 7px;
+
+}
