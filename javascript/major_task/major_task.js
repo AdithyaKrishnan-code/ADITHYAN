@@ -1,4 +1,5 @@
 // ------------------------------------------------------------------importing html elements---------------------------------------------------------------------------------------------
+
 let home_page = document.getElementById("main_page1")
 let home_page_content = document.getElementById("basic_info")
 let nav_bar = document.getElementById("nav_bar")
@@ -61,12 +62,97 @@ let text_to_be_changed_to_username = document.getElementById("change_to_username
 
 let text_to_be_changed_to_newt_ext = document.getElementById("newtext")
 
+let hamburger_icon = document.getElementById("hamburger_icon")
+let phone_authentication = document.getElementById("Phone_menu")
+
+let button_for_transaction_history = document.getElementById("transaction_history_page")
+let button_for_closing_trasaction_page = document.getElementById("close_button_for_transaction_page")
+
+let deposit_table = document.getElementById("transaction_for_deposit_amounts")
+let withdraw_table = document.getElementById("transaction_for_withdraw_amounts")
+
+let transaction_items = document.getElementById("trasanction_items_w/d")
+
+let fund_transfer_button = document.getElementById("symbol_icon_transfer")
 
 
-// -----------------------------------------------------------------------------------------login and signup pages--------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------login and signup pages-----------------------------------------------------------------------------------------------------------
 
 login_page.style.display = "none"
 signup_page.style.display = "none"
+
+
+
+home_button.addEventListener("click", () => {
+
+    log_in_area_after_loggining_in.style.display = "none"
+
+    home_page_content.style.display = "flex"
+
+    home_page_content_2.style.display = "flex"
+
+    home_page_content_2.style.flexDirection = "column"
+
+    page_3.style.display = "flex"
+
+    footer.style.display = "flex"
+
+    signup.style.display = "none"
+
+    login.style.display = "none"
+
+})
+
+// ----------------------------------------------------------------------------------------------deposit and withdraw in home page ----------------------------------------------------------------------------------------
+
+function deposit_before_log_in() {
+
+    deposit_page.showModal()
+
+    deposit_account_details.style.display = "none"
+    font_to_be_changed_while_changing_window.innerText = "Deposit"
+    deposit_confirmation_button.innerText = "Deposit"
+    placeholder_to_be_changed.placeholder = "Enter your deposit amount.."
+    deposit_button_div.style.display = "flex"
+    account_info.style.display = "flex"
+    password_for_fund_transfer.style.display = "flex"
+    account_number_for_fund_transfer.style.display = "flex"
+    placeholder_to_be_changed.style.display = "flex"
+    deposit_succesful_message.style.display = "none"
+    deposit_button_div.style.display = "none"
+    withdraw_page.style.display = "none"
+    withdraw_button_div.style.display = "none"
+    account_number_of_holder.style.display = "none"
+    balance_of_holder.innerText = "PLEASE LOG IN TO AVAIL THIS FUNCTION"
+    ifsc_of_holder.style.display = "none"
+
+}
+function withdraw_before_log_in() {
+
+    deposit_page.showModal()
+
+    deposit_account_details.style.display = "none"
+    font_to_be_changed_while_changing_window.innerText = "Deposit"
+    deposit_confirmation_button.innerText = "Deposit"
+    placeholder_to_be_changed.placeholder = "Enter your deposit amount.."
+    deposit_button_div.style.display = "flex"
+    account_info.style.display = "flex"
+    password_for_fund_transfer.style.display = "flex"
+    account_number_for_fund_transfer.style.display = "flex"
+    placeholder_to_be_changed.style.display = "flex"
+    deposit_succesful_message.style.display = "none"
+    deposit_button_div.style.display = "none"
+    withdraw_page.style.display = "none"
+    withdraw_button_div.style.display = "none"
+    account_number_of_holder.style.display = "none"
+    balance_of_holder.innerText = "PLEASE LOG IN TO AVAIL THIS FUNCTION"
+    ifsc_of_holder.style.display = "none"
+}
+
+
+
+
+// ---------------------------------------------------------------------------------buttons-----------------------------------------------------------------------------------------------------
 
 
 
@@ -120,57 +206,21 @@ button_to_log_in_page_to_sign_up_page.addEventListener("click", () => {
 
 })
 
-// -----------------------------------------------------------------services of the bank---------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------services------------------------------------------------------------------------------------------------------------
 
 
-deposit_button.addEventListener("click", () => {
 
-
-    deposit_page.showModal()
-    deposit_account_details.style.display = "flex"
-    font_to_be_changed_while_changing_window.innerText = "Deposit"
-    deposit_confirmation_button.innerText = "Deposit"
-    placeholder_to_be_changed.placeholder = "Enter your deposit amount.."
-    deposit_button_div.style.display = "flex"
-    account_info.style.display = "none"
-    password_for_fund_transfer.style.display = "flex"
-    account_number_for_fund_transfer.style.display = "flex"
-    placeholder_to_be_changed.style.display = "flex"
-    deposit_succesful_message.style.display = "none"
-    deposit_button_div.style.display = "flex"
-    withdraw_page.style.display = "none"
-    withdraw_button_div.style.display = "none"
-
-
-    console.log("hello_wworld")
-})
+deposit_button.addEventListener("click", deposit_before_log_in)
 
 deposit_page_close_button.addEventListener("click", () => {
 
-
     deposit_page.close()
-    console.log("hello_wworld")
 })
 
 
-withdraw_button.addEventListener("click", () => {
+withdraw_button.addEventListener("click", withdraw_before_log_in)
 
 
-    deposit_page.showModal()
-    font_to_be_changed_while_changing_window.innerText = "Withdraw"
-    deposit_account_details.style.display = "none"
-    withdraw_page.style.display = "flex"
-    withdraw_page.style.flexDirection = "column"
-    account_info.style.display = "none"
-    deposit_button_div.style.display = "none"
-    withdraw_button_div.style.display = "flex"
-    password_for_withdraw.style.display = "flex"
-    account_number_for_withdrawal.style.display = "flex"
-    amount_for_withdrawal.style.display = "flex"
-    withdraw_page.removeChild(withdraw_succesful_message)
-    console.log("hello_wworld")
-
-})
 
 account_details_button.addEventListener("click", () => {
 
@@ -206,7 +256,7 @@ balance_details_button.addEventListener("click", () => {
     deposit_page.appendChild(account_info)
 })
 
-// -------------------------------------------------------signup -----------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------signup-----------------------------------------------------------------------------------------------------------------------
 
 
 let signup_page_first_name = document.getElementById("first_name_in_sign_up_page")
@@ -250,13 +300,36 @@ function add_new_user() {
         account_number: generated_Account_number,
         ifsc_code: generated_ifsc_number,
         balance: 0,
-        log_status: 0
+        log_status: false,
+        transaction_history: []
+    }
+
+    let pattern = new RegExp(
+        "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?]).+$"
+    );
+
+    let password_validity = false
+
+    if(pattern.test(signup_page_password.value)){
+
+        password_validity = true
+
+    }
+
+    else{
+
+        password_validity = false
     }
 
     if (signup_page_first_name.value == "" || signup_page_second_name.value == "" || signup_page_password.value == "" || signup_page_email.value == "") {
 
         alert("kindly enter all the details !!!!!!");
 
+    }
+
+    else if(password_validity == false){
+
+        alert("Password not strong enough")
     }
 
     else {
@@ -332,7 +405,7 @@ function add_new_user() {
 signup_button_for_creating_account.addEventListener("click", add_new_user)
 
 
-// -----------------------------------------------------------login in--------------------------------------------------------------------------------------------------------------------
+// -----------------------------------------------------------login---------------------------------------------------------------------------------------------------------------
 
 
 let email_for_login = document.getElementById("email_for_login")
@@ -351,6 +424,43 @@ let log_in_area_after_loggining_in = document.getElementById("login_area")
 
 function loggin_in() {
 
+    deposit_button.addEventListener("click", () => {
+
+
+        deposit_page.showModal()
+
+        deposit_account_details.style.display = "flex"
+        font_to_be_changed_while_changing_window.innerText = "Deposit"
+        deposit_confirmation_button.innerText = "Deposit"
+        placeholder_to_be_changed.placeholder = "Enter your deposit amount.."
+        deposit_button_div.style.display = "flex"
+        account_info.style.display = "none"
+        password_for_fund_transfer.style.display = "flex"
+        account_number_for_fund_transfer.style.display = "flex"
+        placeholder_to_be_changed.style.display = "flex"
+        deposit_succesful_message.style.display = "none"
+        deposit_button_div.style.display = "flex"
+        withdraw_page.style.display = "none"
+        withdraw_button_div.style.display = "none"
+    })
+
+    withdraw_button.addEventListener("click", () => {
+
+
+        deposit_page.showModal()
+        font_to_be_changed_while_changing_window.innerText = "Withdraw"
+        deposit_account_details.style.display = "none"
+        withdraw_page.style.display = "flex"
+        withdraw_page.style.flexDirection = "column"
+        account_info.style.display = "none"
+        deposit_button_div.style.display = "none"
+        withdraw_button_div.style.display = "flex"
+        password_for_withdraw.style.display = "flex"
+        account_number_for_withdrawal.style.display = "flex"
+        amount_for_withdrawal.style.display = "flex"
+        withdraw_page.removeChild(withdraw_succesful_message)
+
+    })
 
     let span_balance = document.createElement("span")
 
@@ -371,21 +481,7 @@ function loggin_in() {
 
                 text_to_be_changed_to_username.innerText = "   " + userget[j].first_name
 
-                // ----------------------------------------------login refresh situation--------------------------------------------------------------------------------------------------------------------------------------
-
-
-                // if (userget[j].log_status == 1) {
-
-
-                //     home_page.style.backgroundColor = "white"
-
-
-                // }
-
-                // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-                userget[j].log_status = Number(1)
+                userget[j].log_status = true
 
                 localStorage.setItem("account_details", JSON.stringify(userget))
 
@@ -399,32 +495,32 @@ function loggin_in() {
 
                 document.getElementById("authentication").appendChild(log_out_button)
 
-
                 deposit_confirmation_button.addEventListener("click", () => {
 
                     span_balance.classList.remove("span_style_for_withdraw")
 
                     span_balance.classList.add("span_style_for_display")
 
-                    span_balance.innerText = "Rs" + " " + userget[j].balance 
+                    span_balance.innerText = "Rs" + " " + userget[j].balance
 
                     balance_of_holder.innerText = "Balance" + " : " + "  "
 
                     balance_of_holder.appendChild(span_balance)
 
-
                 })
+
                 withdraw_confirmation_button.addEventListener("click", () => {
 
                     span_balance.classList.add("span_style_for_withdraw")
 
-                    span_balance.innerText = "Rs" + " " + userget[j].balance 
+                    span_balance.innerText = "Rs" + " " + userget[j].balance
 
                     balance_of_holder.innerText = "Balance" + " : " + "  "
 
                     balance_of_holder.appendChild(span_balance)
 
                 })
+
 
                 log_out_button.addEventListener("click", () => {
 
@@ -436,10 +532,7 @@ function loggin_in() {
 
                     location.reload()
 
-
                 })
-
-
 
                 account_number_for_fund_transfer.style.display = "flex"
 
@@ -463,7 +556,61 @@ function loggin_in() {
 
                 log_in_area_after_loggining_in.id = "login_area_after_logging_in"
 
-                
+                let home_button_in_log_in_page = document.createElement("button")
+
+                home_button_in_log_in_page.innerText = "Home"
+
+                let transcations_details_button = document.createElement("button")
+
+                transcations_details_button.classList.add("transactions_page_in_log_in_page")
+
+                transcations_details_button.innerText = "Transaction History"
+
+                account_info.appendChild(transcations_details_button)
+
+                transcations_details_button.addEventListener("click", () => {
+
+                    button_for_transaction_history.style.display = "flex"
+
+                    button_for_transaction_history.showModal();
+
+
+
+                })
+
+                button_for_closing_trasaction_page.addEventListener("click", () => {
+
+                    button_for_transaction_history.close()
+
+                    button_for_transaction_history.style.display = "none"
+                })
+
+
+                home_button_in_log_in_page.addEventListener("click", () => {
+
+                    log_in_area_after_loggining_in.style.display = "none"
+
+                    home_page_content.style.display = "flex"
+
+                    home_page_content_2.style.display = "flex"
+
+                    home_page_content_2.style.flexDirection = "column"
+
+                    page_3.style.display = "none"
+
+                    footer.style.display = "flex"
+
+                    signup.style.display = "none"
+
+                    login.style.display = "none"
+                })
+
+                home_button_in_log_in_page.classList.add("diff_pages_home_in_log_in_page")
+
+                log_in_area_after_loggining_in.style.gap = "99px"
+
+                log_in_area_after_loggining_in.appendChild(home_button_in_log_in_page)
+
                 let span_account_number = document.createElement("span")
 
                 span_account_number.classList.add("span_style_for_display")
@@ -474,7 +621,7 @@ function loggin_in() {
 
                 account_number_of_holder.appendChild(span_account_number)
 
-                
+
                 span_balance.classList.add("span_style_for_display")
 
                 span_balance.innerText = "Rs" + " " + userget[j].balance
@@ -567,17 +714,42 @@ deposit_confirmation_button.addEventListener("click", () => {
 
     placeholder_to_be_changed.style.display = "flex"
 
-    console.log("pressed")
+    var theDate = new Date(Date.parse(new Date()))
+    let time_taken = theDate.toLocaleString()
+
 
     for (let k = 0; k < userget.length; k++) {
 
         if (account_number_for_fund_transfer.value == userget[k].account_number && password_for_fund_transfer.value == userget[k].password) {
 
-            console.log("before depositting", userget[k].balance)
+
+            userget[k].transaction_history.push(
+                {
+                    amount: placeholder_to_be_changed.value,
+                    transaction_type: "deposit",
+                    time: time_taken
+                }
+
+                
+            )
+
+            for (let l = 0; l < userget[k].transaction_history.length; l++) {
+
+                let div_for_items = document.createElement("div")
+
+                div_for_items.classList.add("font_color_for_transactions")
+
+                div_for_items.innerText = " Rs "+ userget[k].transaction_history[l].amount +" "+ userget[k].transaction_history[l].transaction_type + "  on "+ userget[k].transaction_history[l].time
+
+                transaction_items.appendChild(div_for_items)
+
+                break
+                
+
+            }
+
 
             userget[k].balance += Number(placeholder_to_be_changed.value)
-
-            console.log("after depositting", userget[k].balance)
 
             localStorage.setItem("account_details", JSON.stringify(userget))
 
@@ -646,19 +818,11 @@ deposit_confirmation_button.addEventListener("click", () => {
 
 })
 
-// -------------------------------------------------------------------------------------withdraw-------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------withdraw-------------------------------------------------------------------------------------
 
 let clear_button_withdraw = false
 
 withdraw_confirmation_button.addEventListener("click", () => {
-
-    console.log("minus")
-
-    console.log(account_number_for_withdrawal)
-    console.log(password_for_withdraw)
-    console.log(amount_for_withdrawal)
-
-
 
     password_for_withdraw.style.display = "flex"
 
@@ -666,20 +830,27 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
     amount_for_withdrawal.style.display = "flex"
 
-    console.log("pressed")
+    var theDate = new Date(Date.parse(new Date()))
+    let time_taken = theDate.toLocaleString()
 
     for (let k = 0; k < userget.length; k++) {
 
 
         if (account_number_for_withdrawal.value == userget[k].account_number && password_for_withdraw.value == userget[k].password) {
 
-            console.log("before withdrawal", userget[k].balance)
-
             if (userget[k].balance >= amount_for_withdrawal.value) {
 
-                userget[k].balance -= Number(amount_for_withdrawal.value)
+                userget[k].transaction_history.push(
+                    {
+                        amount: amount_for_withdrawal.value,
+                        transaction_type: "withdraw",
+                        time: time_taken
+                    }
+                )
 
-                console.log("after withdrawal", userget[k].balance)
+                localStorage.setItem("account_details", JSON.stringify(userget))
+
+                userget[k].balance -= Number(amount_for_withdrawal.value)
 
                 localStorage.setItem("account_details", JSON.stringify(userget))
 
@@ -773,3 +944,29 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
 })
 
+// ----------------------------------------------------------------------dropdown----------------------------------------------------------------------------------------------------------
+
+
+hamburger_icon.addEventListener("click", () => {
+
+    phone_authentication.showModal()
+})
+
+deposit_page_close_button.addEventListener("click", () => {
+
+
+    phone_authentication.close()
+})
+
+// ------------------------------------------------------------------------------transfer button-------------------------------------------------------------------------------------------------
+
+fund_transfer_button.addEventListener("click",()=>{
+
+    alert("fund transfer")
+})
+
+
+function transfer_fund(){
+
+    
+}
