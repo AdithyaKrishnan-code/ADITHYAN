@@ -1794,8 +1794,8 @@ body {
 .transaction_page{
 
     border: solid 2px rgb(79, 79, 79);
-    height: 460px;
-    width: 781px;
+    height: 676px;
+    width: 951px;
     border-radius: 43px;
     background-color: #000000;
     background-image: url(backround_for_pg3.svg);
@@ -1898,6 +1898,67 @@ body {
     color: white;
 }
 
+/* -----------------------------------------------------------transfer amounts------------------------------------------------------------------------------------------------------------------------- */
+
+.transfer_amount_page{
+
+    border: solid 2px rgb(79, 79, 79);
+    height: 460px;
+    width: 781px;
+    border-radius: 43px;
+    background-color: #000000;
+    background-image: url(backround_for_pg3.svg);
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    /* padding-top: 45px; */
+    padding-bottom: 0px;
+    /* padding-left: 132px; */
+}
+
+#transfer_heading {
+    width: 350%;
+    color: #CAFF33;
+    display: flex;
+    align-items: center;
+    font-size: 185%;
+    padding-top: 2px;
+    justify-content: center;
+}
+
+#transfer_page_details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 64%;
+    border-top: none;
+    border-bottom: none;
+    padding-top: 20px;
+}
+
+#close_button_for_transfer_page:hover {
+    background-color: #CAFF33;
+    color: #000000;
+}
+#close_button_for_transfer_page {
+    background-size: contain;
+    background-color: transparent;
+    background-position: center;
+    height: 43%;
+    width: 13%;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+}
+
+#transfer_button_style {
+    height: 11%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: none;
+}
 
 /* -------------------------------------------------login page respondsive---------------------------------------------------------------------------------------- */
 

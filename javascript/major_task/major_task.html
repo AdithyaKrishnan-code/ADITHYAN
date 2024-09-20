@@ -373,7 +373,6 @@
         </div>
     </dialog>
     <dialog class="transaction_page" id="transaction_history_page">
-
         <div class="transactions_heading">
             
             <div class="heading_and_close_button_for_transaction" id="div_close_button_for_transaction">  <button class="deposit_page_top_contents" id="close_button_for_transaction_page"><svg xmlns="http://www.w3.org/2000/svg"
@@ -386,11 +385,29 @@
         </div>
     
         <div class="transaction_page_contents" id="trasanction_items_w/d"> </div>
+        </div> 
+    </dialog>
+    <dialog class="transfer_amount_page" id="transfer_page">
+        <div class="deposit_page_heading" id="deposit_page_main_heading_and_close_button">
+            <div class="deposit_page_top_contents" id="deposit_heading">Fund Transfer</div>
+            <button class="deposit_page_top_contents" id="close_button_for_transfer_page"><svg xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
         </div>
-    
-    
-    
-        </dialog>
+        <div class="deposit_page_heading" id="transfer_page_details">
+            <input type="text" class="account_details" placeholder="Enter the recivers account number"
+                id="account_number_of_the_reciever">
+            <input type="password" class="account_details" placeholder="enter your account password"
+                id="password_for_transfer">
+            <input type="number" class="account_details" placeholder="enter the amount you want to deposit"
+                id="amount_for_transfer">
+        </div>
+        <div class="deposit_page_heading" id="transfer_button_style">
+            <button class="deposit_confirmation" id="confirmation_of_transfer">Transfer</button>
+        </div>
+    </dialog>
     
     <script src="major_task.js"></script>
 </body>

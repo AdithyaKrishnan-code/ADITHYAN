@@ -54,6 +54,8 @@ let button_to_log_in_page_to_sign_up_page = document.getElementById("to_go_to_lo
 
 let deposit_succesful_message = document.createElement("div")
 let withdraw_succesful_message = document.createElement("div")
+let transfer_succesful_message = document.createElement("div")
+
 
 
 let_log_out_button = document.getElementById("log_out_button")
@@ -74,7 +76,17 @@ let withdraw_table = document.getElementById("transaction_for_withdraw_amounts")
 let transaction_items = document.getElementById("trasanction_items_w/d")
 
 let fund_transfer_button = document.getElementById("symbol_icon_transfer")
+let transfer_page = document.getElementById("transfer_page")
+let transfer_page_details = document.getElementById("transfer_page_details")
+let tranfer_page_close_button = document.getElementById("close_button_for_transfer_page")
+let account_number_of_the_reciever = document.getElementById("account_number_of_the_reciever")
+let password_for_transfer = document.getElementById("password_for_transfer")
+let amount_for_transfer = document.getElementById("amount_for_transfer")
+let transfer_confirmation_button = document.getElementById("confirmation_of_transfer")
+let transfer_confirmation_button_div = document.getElementById("transfer_button_style")
 
+var theDate = new Date(Date.parse(new Date()))
+let time_taken = theDate.toLocaleString()
 
 // -----------------------------------------------------------------------------------------login and signup pages-----------------------------------------------------------------------------------------------------------
 
@@ -310,13 +322,13 @@ function add_new_user() {
 
     let password_validity = false
 
-    if(pattern.test(signup_page_password.value)){
+    if (pattern.test(signup_page_password.value)) {
 
         password_validity = true
 
     }
 
-    else{
+    else {
 
         password_validity = false
     }
@@ -327,7 +339,7 @@ function add_new_user() {
 
     }
 
-    else if(password_validity == false){
+    else if (password_validity == false) {
 
         alert("Password not strong enough")
     }
@@ -520,7 +532,147 @@ function loggin_in() {
                     balance_of_holder.appendChild(span_balance)
 
                 })
+// ------------------------------------------------------------------------------------fund transfer between accounts---------------------------------------------------------------------------------------------
+                fund_transfer_button.addEventListener("click", () => {
 
+
+                    transfer_page.showModal()
+
+                    amount_for_transfer.style.display = "flex"
+
+                    account_number_of_the_reciever.style.display = "flex"
+
+                    password_for_transfer.style.display = "flex"
+
+                    transfer_confirmation_button_div.style.display = "flex"
+
+                    transfer_page_details.removeChild(transfer_succesful_message)
+
+                    account_number_of_the_reciever.value = ""
+                    amount_for_transfer.value = ""
+                    password_for_transfer.value = ""
+
+
+                })
+// ---------------------------------------------------------------------------fund transfer between accounts---------------------------------------------------------------------------------------------------
+                transfer_confirmation_button.addEventListener("click", () => {
+
+
+                    let sending_account = account_number_of_the_reciever.value
+                    let amount_for_transferred = amount_for_transfer.value
+                    let password_to_confirm_transfer = password_for_transfer.value
+                    let flag_for_transfer = false
+
+                    
+
+
+                    for (let ii = 0; ii < userget.length; ii++) {
+                        
+
+                        if (sending_account == userget[ii].account_number && userget[j].password == password_to_confirm_transfer && amount_for_transferred<=userget[j].balance && sending_account!=userget[j].account_number) {
+
+                            flag_for_transfer = true
+
+                            userget[ii].balance += Number(amount_for_transferred)
+
+                            userget[j].balance -= Number(amount_for_transferred)
+
+                            userget[j].transaction_history.push(
+                                {
+                                    amount: amount_for_transferred,
+                                    transaction_type: "Amount debited",
+                                    time: time_taken
+                                }
+                
+                
+                            )
+    
+                            userget[ii].transaction_history.push(
+                                {
+                                    amount: amount_for_transferred,
+                                    transaction_type: "Amount Credited",
+                                    time: time_taken
+                                }
+                
+                
+                            )
+    
+                            localStorage.setItem("account_details", JSON.stringify(userget))
+
+                            localStorage.setItem("account_details", JSON.stringify(userget))
+
+                            span_balance.innerText = "Rs" + " " + userget[j].balance
+
+                            amount_for_transfer.style.display = "none"
+
+                            account_number_of_the_reciever.style.display = "none"
+
+                            password_for_transfer.style.display = "none"
+
+                            transfer_confirmation_button_div.style.display = "none"
+
+                            transfer_succesful_message.style.display = "flex"
+
+                            transfer_succesful_message.classList.add("deposit_message_success")
+
+                            transfer_succesful_message.innerText = "Transfer Sucessful"
+
+                            transfer_page_details.appendChild(transfer_succesful_message)
+
+                            
+
+                        }
+
+
+                        // if(flag_for_transfer == true){
+    
+                        //     userget[j].transaction_history.push(
+                        //         {
+                        //             amount: amount_for_transferred,
+                        //             transaction_type: "Amount debited",
+                        //             time: time_taken
+                        //         }
+                
+                
+                        //     )
+    
+                        //     userget[ii].transaction_history.push(
+                        //         {
+                        //             amount: amount_for_transferred,
+                        //             transaction_type: "Amount Credited",
+                        //             time: time_taken
+                        //         }
+                
+                
+                        //     )
+    
+                        //     localStorage.setItem("account_details", JSON.stringify(userget))
+                        // }
+                    }
+
+
+
+                    if(!flag_for_transfer){
+
+                        amount_for_transfer.style.display = "none"
+
+                        account_number_of_the_reciever.style.display = "none"
+
+                        password_for_transfer.style.display = "none"
+
+                        transfer_confirmation_button_div.style.display = "none"
+
+                        transfer_succesful_message.style.display = "flex"
+
+                        transfer_succesful_message.classList.add("deposit_message_success")
+
+                        transfer_succesful_message.innerText = "Transfer Unsucessful"
+
+                        transfer_page_details.appendChild(transfer_succesful_message)
+
+                    }
+                })
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 log_out_button.addEventListener("click", () => {
 
@@ -533,7 +685,7 @@ function loggin_in() {
                     location.reload()
 
                 })
-
+// ----------------------------------------------------------------------------------------transaction histrory--------------------------------------------------------------------------------------
                 account_number_for_fund_transfer.style.display = "flex"
 
                 changing_log_in_box_part.style.display = "none"
@@ -568,13 +720,31 @@ function loggin_in() {
 
                 account_info.appendChild(transcations_details_button)
 
+
+
                 transcations_details_button.addEventListener("click", () => {
+
+
 
                     button_for_transaction_history.style.display = "flex"
 
                     button_for_transaction_history.showModal();
 
+                    transaction_items.innerHTML = ""
 
+                    for (let l = 0; l < userget[j].transaction_history.length; l++) {
+
+                        let div_for_items = document.createElement("div")
+
+                        div_for_items.classList.add("font_color_for_transactions")
+
+                        div_for_items.innerText = " Rs " + userget[j].transaction_history[l].amount + " " + userget[j].transaction_history[l].transaction_type + "  on " + userget[j].transaction_history[l].time
+
+                        transaction_items.appendChild(div_for_items)
+
+                        button_for_transaction_history.appendChild(transaction_items)
+
+                    }
 
                 })
 
@@ -584,7 +754,7 @@ function loggin_in() {
 
                     button_for_transaction_history.style.display = "none"
                 })
-
+//  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 home_button_in_log_in_page.addEventListener("click", () => {
 
@@ -604,6 +774,8 @@ function loggin_in() {
 
                     login.style.display = "none"
                 })
+
+
 
                 home_button_in_log_in_page.classList.add("diff_pages_home_in_log_in_page")
 
@@ -714,8 +886,7 @@ deposit_confirmation_button.addEventListener("click", () => {
 
     placeholder_to_be_changed.style.display = "flex"
 
-    var theDate = new Date(Date.parse(new Date()))
-    let time_taken = theDate.toLocaleString()
+
 
 
     for (let k = 0; k < userget.length; k++) {
@@ -730,23 +901,9 @@ deposit_confirmation_button.addEventListener("click", () => {
                     time: time_taken
                 }
 
-                
+
             )
 
-            for (let l = 0; l < userget[k].transaction_history.length; l++) {
-
-                let div_for_items = document.createElement("div")
-
-                div_for_items.classList.add("font_color_for_transactions")
-
-                div_for_items.innerText = " Rs "+ userget[k].transaction_history[l].amount +" "+ userget[k].transaction_history[l].transaction_type + "  on "+ userget[k].transaction_history[l].time
-
-                transaction_items.appendChild(div_for_items)
-
-                break
-                
-
-            }
 
 
             userget[k].balance += Number(placeholder_to_be_changed.value)
@@ -960,13 +1117,15 @@ deposit_page_close_button.addEventListener("click", () => {
 
 // ------------------------------------------------------------------------------transfer button-------------------------------------------------------------------------------------------------
 
-fund_transfer_button.addEventListener("click",()=>{
 
-    alert("fund transfer")
+
+tranfer_page_close_button.addEventListener("click", () => {
+
+    transfer_page.close()
 })
 
 
-function transfer_fund(){
+function transfer_fund() {
 
-    
+
 }
