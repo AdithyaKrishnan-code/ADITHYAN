@@ -88,6 +88,12 @@ let transfer_confirmation_button_div = document.getElementById("transfer_button_
 var theDate = new Date(Date.parse(new Date()))
 let time_taken = theDate.toLocaleString()
 
+
+
+
+
+
+
 // -----------------------------------------------------------------------------------------login and signup pages-----------------------------------------------------------------------------------------------------------
 
 login_page.style.display = "none"
@@ -95,25 +101,12 @@ signup_page.style.display = "none"
 
 
 
-home_button.addEventListener("click", () => {
 
-    log_in_area_after_loggining_in.style.display = "none"
+function home_button_before_login() {
 
-    home_page_content.style.display = "flex"
+    Location.reload()
 
-    home_page_content_2.style.display = "flex"
-
-    home_page_content_2.style.flexDirection = "column"
-
-    page_3.style.display = "flex"
-
-    footer.style.display = "flex"
-
-    signup.style.display = "none"
-
-    login.style.display = "none"
-
-})
+}
 
 // ----------------------------------------------------------------------------------------------deposit and withdraw in home page ----------------------------------------------------------------------------------------
 
@@ -161,6 +154,41 @@ function withdraw_before_log_in() {
     ifsc_of_holder.style.display = "none"
 }
 
+function account_details_before_log_in() {
+
+    deposit_page.showModal()
+    deposit_account_details.style.display = "none"
+    deposit_button_div.style.display = "none"
+    account_info.style.display = "flex"
+    ifsc_of_holder.style.display = "flex"
+    document.getElementById("account_number").style.display = "flex"
+    document.getElementById("account_balance").style.display = "flex"
+    font_to_be_changed_while_changing_window.innerText = "Account Details"
+    balance_of_holder.innerText = "Account balance will be dispalyed here"
+    withdraw_page.style.display = "none"
+    withdraw_button_div.style.display = "none"
+
+    deposit_page.appendChild(account_info)
+
+
+}
+
+function view_balance_before_login() {
+
+    deposit_page.showModal()
+    deposit_account_details.style.display = "none"
+    deposit_button_div.style.display = "none"
+    account_info.style.display = "flex"
+    document.getElementById("account_number").style.display = "flex"
+    document.getElementById("account_balance").style.display = "flex"
+    ifsc_of_holder.style.display = "none"
+    font_to_be_changed_while_changing_window.innerText = "Balance of the Account"
+    balance_of_holder.innerText = "Account balance will be dispalyed here"
+    withdraw_page.style.display = "none"
+    withdraw_button_div.style.display = "none"
+
+    deposit_page.appendChild(account_info)
+}
 
 
 
@@ -221,52 +249,18 @@ button_to_log_in_page_to_sign_up_page.addEventListener("click", () => {
 // --------------------------------------------------------------services------------------------------------------------------------------------------------------------------------
 
 
-
-deposit_button.addEventListener("click", deposit_before_log_in)
-
 deposit_page_close_button.addEventListener("click", () => {
 
     deposit_page.close()
 })
 
+deposit_button.addEventListener("click", deposit_before_log_in)
 
 withdraw_button.addEventListener("click", withdraw_before_log_in)
 
+account_details_button.addEventListener("click", account_details_before_log_in)
 
-
-account_details_button.addEventListener("click", () => {
-
-    deposit_page.showModal()
-    deposit_account_details.style.display = "none"
-    deposit_button_div.style.display = "none"
-    account_info.style.display = "flex"
-    ifsc_of_holder.style.display = "flex"
-    document.getElementById("account_number").style.display = "flex"
-    document.getElementById("account_balance").style.display = "flex"
-    font_to_be_changed_while_changing_window.innerText = "Account Details"
-    withdraw_page.style.display = "none"
-    withdraw_button_div.style.display = "none"
-
-    deposit_page.appendChild(account_info)
-
-
-})
-
-balance_details_button.addEventListener("click", () => {
-
-    deposit_page.showModal()
-    deposit_account_details.style.display = "none"
-    deposit_button_div.style.display = "none"
-    account_info.style.display = "flex"
-    document.getElementById("account_number").style.display = "flex"
-    document.getElementById("account_balance").style.display = "flex"
-    ifsc_of_holder.style.display = "none"
-    font_to_be_changed_while_changing_window.innerText = "Balance of the Account"
-    withdraw_page.style.display = "none"
-    withdraw_button_div.style.display = "none"
-
-    deposit_page.appendChild(account_info)
-})
+balance_details_button.addEventListener("click", view_balance_before_login)
 
 // -------------------------------------------------------signup-----------------------------------------------------------------------------------------------------------------------
 
@@ -292,6 +286,8 @@ let page_3 = document.getElementById("main_page3")
 let footer = document.getElementById("footer")
 
 function add_new_user() {
+
+    home_button.addEventListener("click", home_button_before_login)
 
     page_3.style.display = "none"
 
@@ -474,6 +470,8 @@ function loggin_in() {
 
     })
 
+
+
     let span_balance = document.createElement("span")
 
     page_3.style.display = "none"
@@ -489,9 +487,46 @@ function loggin_in() {
 
             if (email_for_login.value == userget[j].email && password_for_login.value == userget[j].password) {
 
+                account_details_button.addEventListener("click", () => {
+
+                    span_balance.classList.remove("span_style_for_withdraw")
+
+                    span_balance.classList.add("span_style_for_display")
+
+                    span_balance.innerText = "Rs" + " " + userget[j].balance
+
+                    balance_of_holder.innerText = "Balance" + " : " + "  "
+
+                    balance_of_holder.appendChild(span_balance)
+
+                    account_info.appendChild(transcations_details_button)
+
+
+                })
+
+                balance_details_button.addEventListener("click", () => {
+
+                    span_balance.classList.remove("span_style_for_withdraw")
+
+                    span_balance.classList.add("span_style_for_display")
+
+                    span_balance.innerText = "Rs" + " " + userget[j].balance
+
+                    balance_of_holder.innerText = "Balance" + " : " + "  "
+
+                    balance_of_holder.appendChild(span_balance)
+
+                    account_info.removeChild(transcations_details_button)
+
+
+
+                })
+
                 text_to_be_changed_to_newt_ext.innerText = "WELCOME"
 
                 text_to_be_changed_to_username.innerText = "   " + userget[j].first_name
+
+
 
                 userget[j].log_status = true
 
@@ -532,11 +567,17 @@ function loggin_in() {
                     balance_of_holder.appendChild(span_balance)
 
                 })
-// ------------------------------------------------------------------------------------fund transfer between accounts---------------------------------------------------------------------------------------------
+                // ------------------------------------------------------------------------------------fund transfer between accounts---------------------------------------------------------------------------------------------
                 fund_transfer_button.addEventListener("click", () => {
 
 
                     transfer_page.showModal()
+
+                    account_number_of_the_reciever.value = ""
+                    amount_for_transfer.value = ""
+                    password_for_transfer.value = ""
+
+                    transfer_page_details.removeChild(message_in_the_modal_in_home_page)
 
                     amount_for_transfer.style.display = "flex"
 
@@ -548,13 +589,11 @@ function loggin_in() {
 
                     transfer_page_details.removeChild(transfer_succesful_message)
 
-                    account_number_of_the_reciever.value = ""
-                    amount_for_transfer.value = ""
-                    password_for_transfer.value = ""
+
 
 
                 })
-// ---------------------------------------------------------------------------fund transfer between accounts---------------------------------------------------------------------------------------------------
+                // ---------------------------------------------------------------------------fund transfer between accounts---------------------------------------------------------------------------------------------------
                 transfer_confirmation_button.addEventListener("click", () => {
 
 
@@ -563,96 +602,121 @@ function loggin_in() {
                     let password_to_confirm_transfer = password_for_transfer.value
                     let flag_for_transfer = false
 
-                    
+
 
 
                     for (let ii = 0; ii < userget.length; ii++) {
-                        
 
-                        if (sending_account == userget[ii].account_number && userget[j].password == password_to_confirm_transfer && amount_for_transferred<=userget[j].balance && sending_account!=userget[j].account_number) {
 
-                            flag_for_transfer = true
+                        if (sending_account == userget[ii].account_number && userget[j].password == password_to_confirm_transfer) {
 
-                            userget[ii].balance += Number(amount_for_transferred)
+                            if (sending_account == userget[j].account_number) {
 
-                            userget[j].balance -= Number(amount_for_transferred)
+                                flag_for_transfer = true
 
-                            userget[j].transaction_history.push(
-                                {
-                                    amount: amount_for_transferred,
-                                    transaction_type: "Amount debited",
-                                    time: time_taken
-                                }
-                
-                
-                            )
-    
-                            userget[ii].transaction_history.push(
-                                {
-                                    amount: amount_for_transferred,
-                                    transaction_type: "Amount Credited",
-                                    time: time_taken
-                                }
-                
-                
-                            )
-    
-                            localStorage.setItem("account_details", JSON.stringify(userget))
+                                amount_for_transfer.style.display = "none"
 
-                            localStorage.setItem("account_details", JSON.stringify(userget))
+                                account_number_of_the_reciever.style.display = "none"
 
-                            span_balance.innerText = "Rs" + " " + userget[j].balance
+                                password_for_transfer.style.display = "none"
 
-                            amount_for_transfer.style.display = "none"
+                                transfer_confirmation_button_div.style.display = "none"
 
-                            account_number_of_the_reciever.style.display = "none"
+                                transfer_succesful_message.style.display = "flex"
 
-                            password_for_transfer.style.display = "none"
+                                transfer_succesful_message.classList.add("deposit_message_success")
 
-                            transfer_confirmation_button_div.style.display = "none"
+                                transfer_succesful_message.innerText = "Cannot transfer to Logged account"
 
-                            transfer_succesful_message.style.display = "flex"
+                                transfer_page_details.appendChild(transfer_succesful_message)
 
-                            transfer_succesful_message.classList.add("deposit_message_success")
 
-                            transfer_succesful_message.innerText = "Transfer Sucessful"
+                            }
 
-                            transfer_page_details.appendChild(transfer_succesful_message)
+                            else if (amount_for_transferred > userget[j].balance) {
 
-                            
+                                flag_for_transfer = true
+
+                                amount_for_transfer.style.display = "none"
+
+                                account_number_of_the_reciever.style.display = "none"
+
+                                password_for_transfer.style.display = "none"
+
+                                transfer_confirmation_button_div.style.display = "none"
+
+                                transfer_succesful_message.style.display = "flex"
+
+                                transfer_succesful_message.classList.add("deposit_message_success")
+
+                                transfer_succesful_message.innerText = "Insufficient Balance"
+
+                                transfer_page_details.appendChild(transfer_succesful_message)
+
+
+                            }
+
+                            else {
+
+
+                                flag_for_transfer = true
+
+                                userget[ii].balance += Number(amount_for_transferred)
+
+                                userget[j].balance -= Number(amount_for_transferred)
+
+                                userget[j].transaction_history.push(
+                                    {
+                                        amount: amount_for_transferred,
+                                        transaction_type: "Amount debited",
+                                        time: time_taken
+                                    }
+
+
+                                )
+
+                                userget[ii].transaction_history.push(
+                                    {
+                                        amount: amount_for_transferred,
+                                        transaction_type: "Amount Credited",
+                                        time: time_taken
+                                    }
+
+
+                                )
+
+                                localStorage.setItem("account_details", JSON.stringify(userget))
+
+                                localStorage.setItem("account_details", JSON.stringify(userget))
+
+                                span_balance.innerText = "Rs" + " " + userget[j].balance
+
+                                amount_for_transfer.style.display = "none"
+
+                                account_number_of_the_reciever.style.display = "none"
+
+                                password_for_transfer.style.display = "none"
+
+                                transfer_confirmation_button_div.style.display = "none"
+
+                                transfer_succesful_message.style.display = "flex"
+
+                                transfer_succesful_message.classList.add("deposit_message_success")
+
+                                transfer_succesful_message.innerText = "Transfer Sucessful"
+
+                                transfer_page_details.appendChild(transfer_succesful_message)
+
+                            }
+
+
 
                         }
 
-
-                        // if(flag_for_transfer == true){
-    
-                        //     userget[j].transaction_history.push(
-                        //         {
-                        //             amount: amount_for_transferred,
-                        //             transaction_type: "Amount debited",
-                        //             time: time_taken
-                        //         }
-                
-                
-                        //     )
-    
-                        //     userget[ii].transaction_history.push(
-                        //         {
-                        //             amount: amount_for_transferred,
-                        //             transaction_type: "Amount Credited",
-                        //             time: time_taken
-                        //         }
-                
-                
-                        //     )
-    
-                        //     localStorage.setItem("account_details", JSON.stringify(userget))
-                        // }
                     }
 
 
-
-                    if(!flag_for_transfer){
+                    if (!flag_for_transfer) {
 
                         amount_for_transfer.style.display = "none"
 
@@ -666,13 +730,13 @@ function loggin_in() {
 
                         transfer_succesful_message.classList.add("deposit_message_success")
 
-                        transfer_succesful_message.innerText = "Transfer Unsucessful"
+                        transfer_succesful_message.innerText = "Transfer Unsucessful Check Credentials"
 
                         transfer_page_details.appendChild(transfer_succesful_message)
 
                     }
                 })
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 log_out_button.addEventListener("click", () => {
 
@@ -685,7 +749,7 @@ function loggin_in() {
                     location.reload()
 
                 })
-// ----------------------------------------------------------------------------------------transaction histrory--------------------------------------------------------------------------------------
+
                 account_number_for_fund_transfer.style.display = "flex"
 
                 changing_log_in_box_part.style.display = "none"
@@ -712,19 +776,15 @@ function loggin_in() {
 
                 home_button_in_log_in_page.innerText = "Home"
 
+// ----------------------------------------------------------------------------------------transaction histrory--------------------------------------------------------------------------------------
+
                 let transcations_details_button = document.createElement("button")
 
                 transcations_details_button.classList.add("transactions_page_in_log_in_page")
 
                 transcations_details_button.innerText = "Transaction History"
 
-                account_info.appendChild(transcations_details_button)
-
-
-
                 transcations_details_button.addEventListener("click", () => {
-
-
 
                     button_for_transaction_history.style.display = "flex"
 
@@ -734,12 +794,24 @@ function loggin_in() {
 
                     for (let l = 0; l < userget[j].transaction_history.length; l++) {
 
-                        let div_for_items = document.createElement("div")
+                        let div_for_items = document.createElement("p")
 
+                        let transaction_history_amount = document.createElement("span")
+                        let transaction_history_type = document.createElement("span")
+                        let transaction_history_time = document.createElement("span")
+
+                        transaction_history_amount.innerText = " Rs " + userget[j].transaction_history[l].amount
+                        transaction_history_type.innerText =  " " + userget[j].transaction_history[l].transaction_type
+                        transaction_history_time.innerText = "  on " + userget[j].transaction_history[l].time
+
+                        transaction_history_type.classList.add("transaction_history_span_style")
                         div_for_items.classList.add("font_color_for_transactions")
+                        
+                        // div_for_items.innerText = " Rs " + userget[j].transaction_history[l].amount + " " + userget[j].transaction_history[l].transaction_type + "  on " + userget[j].transaction_history[l].time
 
-                        div_for_items.innerText = " Rs " + userget[j].transaction_history[l].amount + " " + userget[j].transaction_history[l].transaction_type + "  on " + userget[j].transaction_history[l].time
-
+                        div_for_items.appendChild(transaction_history_amount)
+                        div_for_items.appendChild(transaction_history_type)
+                        div_for_items.appendChild(transaction_history_time)
                         transaction_items.appendChild(div_for_items)
 
                         button_for_transaction_history.appendChild(transaction_items)
@@ -754,7 +826,7 @@ function loggin_in() {
 
                     button_for_transaction_history.style.display = "none"
                 })
-//  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                //  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 home_button_in_log_in_page.addEventListener("click", () => {
 
@@ -905,7 +977,6 @@ deposit_confirmation_button.addEventListener("click", () => {
             )
 
 
-
             userget[k].balance += Number(placeholder_to_be_changed.value)
 
             localStorage.setItem("account_details", JSON.stringify(userget))
@@ -976,6 +1047,8 @@ deposit_confirmation_button.addEventListener("click", () => {
 })
 
 // -------------------------------------------------------------------------------------withdraw-------------------------------------------------------------------------------------
+
+
 
 let clear_button_withdraw = false
 
@@ -1101,7 +1174,10 @@ withdraw_confirmation_button.addEventListener("click", () => {
 
 })
 
+
+
 // ----------------------------------------------------------------------dropdown----------------------------------------------------------------------------------------------------------
+
 
 
 hamburger_icon.addEventListener("click", () => {
@@ -1115,17 +1191,39 @@ deposit_page_close_button.addEventListener("click", () => {
     phone_authentication.close()
 })
 
+
 // ------------------------------------------------------------------------------transfer button-------------------------------------------------------------------------------------------------
-
-
 
 tranfer_page_close_button.addEventListener("click", () => {
 
     transfer_page.close()
 })
 
+let message_in_the_modal_in_home_page = document.createElement("div")
 
-function transfer_fund() {
+message_in_the_modal_in_home_page.classList.add("account_info")
+
+message_in_the_modal_in_home_page.innerText = "PLEASE LOG IN TO AVAIL THIS FUNCTION"
 
 
-}
+fund_transfer_button.addEventListener("click", () => {
+
+
+    transfer_page.showModal()
+
+    transfer_page_details.appendChild(message_in_the_modal_in_home_page)
+
+    amount_for_transfer.style.display = "none"
+
+    account_number_of_the_reciever.style.display = "none"
+
+    password_for_transfer.style.display = "none"
+
+    transfer_confirmation_button_div.style.display = "none"
+
+    transfer_page_details.removeChild(transfer_succesful_message)
+
+
+})
+
+// -----------------------------------------------------------------------------------------session----------------------------------------------------------------------------------------------------------

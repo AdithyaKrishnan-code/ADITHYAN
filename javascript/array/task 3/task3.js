@@ -8,8 +8,6 @@ var i = 0
 var found = false
 while (i < 5) {
 
-
-
     if (fruits[i] == item) {
 
         found = true
@@ -19,7 +17,6 @@ while (i < 5) {
     }
 
     i++;
-
 
 }
 

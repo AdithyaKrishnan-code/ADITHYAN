@@ -1864,7 +1864,10 @@ body {
     align-items: center;
     justify-content: center;
     padding-top: 20px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* justify-content: space-evenly */
 
 }
 
@@ -1895,7 +1898,13 @@ body {
 
 .font_color_for_transactions{
 
-    color: white;
+    color: #FFFFFF;
+}
+
+.transaction_history_span_style{
+
+    width: 120px;
+    color: #CAFF33;
 }
 
 /* -----------------------------------------------------------transfer amounts------------------------------------------------------------------------------------------------------------------------- */
